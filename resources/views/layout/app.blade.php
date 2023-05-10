@@ -23,11 +23,11 @@
 
     <div class="min-height-300 bg-primary position-absolute w-100"></div>
     <aside class="sidenav bg-white navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-4 ps" id="sidenav-main">
-        @include('layout.inc.sidebar')
+        @include('layout.inc.SideBar')
     </aside>
     <main class="main-content position-relative border-radius-lg ps">
         <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" data-scroll="false">
-            @include('layout.inc.frontnav')
+            @include('layout.inc.DashboardNav')
         </nav>
         <div class="container-fluid py-4">
             @yield('content')

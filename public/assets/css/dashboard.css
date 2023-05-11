@@ -5144,7 +5144,7 @@ fieldset:disabled .btn {
   --bs-card-cap-color: ;
   --bs-card-height: ;
   --bs-card-color: ;
-  --bs-card-bg: #fff;
+/*  --bs-card-bg: #fff;*/
   --bs-card-img-overlay-padding: 1rem;
   --bs-card-group-margin: 0.75rem;
   position: relative;
@@ -20845,7 +20845,8 @@ fieldset:disabled .btn {
 }
 
 .card {
-  box-shadow: 0 0 2rem 0 rgba(136, 152, 170, 0.15);
+/*  box-shadow: 0 0 2rem 0 rgba(136, 152, 170, 0.15);*/
+border-radius:10px ;
 }
 
 .card .card-header {
@@ -22290,7 +22291,7 @@ hr.horizontal.gray-light {
 }
 
 .navbar .navbar-brand {
-  color: #344767;
+  color: white;
   font-size: 0.875rem;
 }
 
@@ -26934,3 +26935,15 @@ pre[class*="language-"] {
 }
 
 /*# sourceMappingURL=dashboard-free.css.map */
+
+
+aside#sidenav-main {
+    background-color: #1e1e2d !important;
+}
+.card-body.p-3 {
+    background-color: #1e1e2d !important;
+    border-radius: 15px;
+}
+.border-radius-0 {
+    border-radius: 0px !important;
+}

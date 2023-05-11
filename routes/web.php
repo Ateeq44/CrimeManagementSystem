@@ -12,9 +12,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
-Route::get('criminal', [App\Http\Controllers\HomeController::class, 'criminal']);
+Route::middleware(['auth'])->group(function () {
+
+	Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
+});
+
+Route::middleware(['auth', 'isAdmin'])->group(function () {
+	Route::get('dashboard', [App\Http\Controllers\AdminController::class, 'index']);
+	Route::get('Police-Station', [App\Http\Controllers\PoliceStationController::class, 'police_station']);
+});

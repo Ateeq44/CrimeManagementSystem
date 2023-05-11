@@ -25,7 +25,7 @@ class adminmiddleware
             }
             else
             {
-                return redirect('/');
+                return redirect('/')->with('status', 'You');
             }
         }
         else

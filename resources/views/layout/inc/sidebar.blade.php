@@ -11,7 +11,7 @@
   <ul class="navbar-nav">
     @if(@Auth::user()->role_as==1)
     <li class="nav-item">
-      <a class="nav-link active" href="../pages/dashboard.html">
+      <a class="nav-link" href="{{ url('dashboard') }}">
         <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
           <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
         </div>
@@ -22,7 +22,7 @@
     
     @if(@Auth::user()->role_as==1)
     <li class="nav-item">
-      <a class="nav-link " href="{{ url('criminal') }}">
+      <a class="nav-link " href="{{ url('Police-Station') }}">
         <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
           <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
         </div>

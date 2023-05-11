@@ -10819,3 +10819,11 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.fa-2x{
+  font-size: 25px;
+}
+.col-md-6.p-5 {
+    box-shadow: 0px 0px 1px 0px black;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.8);
+}

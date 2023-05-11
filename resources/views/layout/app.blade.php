@@ -17,12 +17,11 @@
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
     <link href="{{asset('assets/css/nucleo-svg.css')}}" rel="stylesheet" />
     <!-- CSS Files -->
-    <link id="pagestyle" href="{{asset('assets/css/argon-dashboard.css?v=2.0.4')}}" rel="stylesheet" />
+    <link id="pagestyle" href="{{asset('assets/css/dashboard.css?v=2.0.4')}}" rel="stylesheet" />
 </head>
-<body>
+<body style="background: #151521;">
 
-    <div class="min-height-300 bg-primary position-absolute w-100"></div>
-    <aside class="sidenav bg-white navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-4 ps" id="sidenav-main">
+    <aside class="sidenav navbar navbar-vertical navbar-expand-xs fixed-start" id="sidenav-main">
         @include('layout.inc.SideBar')
     </aside>
     <main class="main-content position-relative border-radius-lg ps">
@@ -133,8 +132,7 @@
 }
 </script>
 <!-- Github buttons -->
-<script async defer src="https://buttons.github.io/buttons.js"></script>
 <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
-<script src="{{asset('assets/js/argon-dashboard.min.js?v=2.0.4')}}"></script>
+<script src="{{asset('assets/js/dashboard.min.js?v=2.0.4')}}"></script>
 </body>
 </html>

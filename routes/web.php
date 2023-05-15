@@ -14,15 +14,17 @@ use Illuminate\Support\Facades\Route;
 */
 Auth::routes();
 
-Route::middleware(['auth'])->group(function () {
-	
-});
 
-Route::middleware(['auth', 'isAdmin'])->group(function () {
+
+Route::group(['middleware' => ['auth']], function() {
+
 	Route::get('/', [App\Http\Controllers\AdminController::class, 'index']);
 	// Complaint
 	Route::get('complaint', [App\Http\Controllers\ComplaintController::class, 'index']);
 	Route::post('com-submit', [App\Http\Controllers\ComplaintController::class, 'complaint']);
+	Route::get('com_delete/{id}', [App\Http\Controllers\ComplaintController::class, 'delete']);
+	Route::get('com_edit/{id}', [App\Http\Controllers\ComplaintController::class, 'edit']);
+	Route::post('com-update/{id}', [App\Http\Controllers\ComplaintController::class, 'update']);
 	// Poloce Station
 	Route::get('Police-Station', [App\Http\Controllers\PoliceStationController::class, 'police_station']);
 });

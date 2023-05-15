@@ -10,7 +10,9 @@ class ComplaintController extends Controller
 {
     public function index()
     {
-        return view('complaint');
+        $data = [];
+        $data['complaint'] = Complaint::get();
+        return view('complaint.complaint', $data);
     }
     public function complaint(Request $request)
     {
@@ -28,8 +30,39 @@ class ComplaintController extends Controller
             'tocrime' => $request->input('tocrime'),
             'incident' => $request->input('incident'),
             'complaint_no' =>  '#'.rand(11111,99999),
+
         ];
         $insert = complaint::create($data);
-        return redirect(url('/'));
+        return redirect(url('complaint'))->with('status', 'Added Successfully');
     }
+
+    public function delete ($id)
+    {
+        Complaint::destroy(array('id', $id));
+        return redirect ('complaint')->with('status', 'Deleted Successfully');
+    }
+
+    public function edit ($id)
+    {
+        $data['complaint'] = Complaint::find($id);
+        return view('complaint.edit', $data);
+
+    }
+    public function update(Request $request, $id)
+    {
+        $complaint = complaint::find($id);
+        $complaint->user_id =  $request->input('user_id');
+        $complaint->name =  $request->input('name');
+        $complaint->cnic =  $request->input('cnic');
+        $complaint->address =  $request->input('address');
+        $complaint->loca_crime =  $request->input('loca_crime');
+        $complaint->police_station =  $request->input('police_station');
+        $complaint->doc =  $request->input('doc');
+        $complaint->tocrime =  $request->input('tocrime');
+        $complaint->incident =  $request->input('incident');
+        $complaint->complaint_no =  '#'.rand(11111,99999);
+        $complaint->update();
+        return redirect(url("complaint",))->with('status', "Complaint Updated Successfully");
+    }
+
 }

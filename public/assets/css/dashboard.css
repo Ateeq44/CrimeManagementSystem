@@ -20845,7 +20845,7 @@ fieldset:disabled .btn {
 }
 
 .card {
-/*  box-shadow: 0 0 2rem 0 rgba(136, 152, 170, 0.15);*/
+  box-shadow: 0 0 2rem 0 rgba(136, 152, 170, 0.15);
 border-radius:10px ;
 }
 
@@ -22480,7 +22480,7 @@ hr.horizontal.gray-light {
 .navbar-vertical .navbar-brand>img,
 .navbar-vertical .navbar-brand-img {
   max-width: 100%;
-  max-height: 2rem;
+/*  max-height: 2rem;*/
 }
 
 .navbar-vertical .navbar-nav .nav-link {
@@ -24573,7 +24573,7 @@ hr.horizontal.gray-light {
 }
 
 .table thead th {
-  padding: 0.75rem 1.5rem;
+/*  padding: 0.75rem 1.5rem;*/
   text-transform: capitalize;
   letter-spacing: 0px;
   border-bottom: 1px solid #e9ecef;
@@ -26941,9 +26941,12 @@ aside#sidenav-main {
     background-color: #1e1e2d !important;
 }
 .card-body.p-3 {
-    background-color: #1e1e2d !important;
+/*    background-color: #1e1e2d !important;*/
     border-radius: 15px;
 }
 .border-radius-0 {
     border-radius: 0px !important;
+}
+.nav-link-text{
+  color: white;
 }

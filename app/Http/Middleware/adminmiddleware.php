@@ -17,20 +17,20 @@ class adminmiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Auth::check())
-        {
-            if(@Auth::user()->role_as == 1 )
-            {
+        // if(Auth::check())
+        // {
+        //     if(@Auth::user()->role_as == 1 )
+        //     {
                 return $next($request);
-            }
-            else
-            {
-                return redirect('/');
-            }
-        }
-        else
-        {
-            return redirect('/');
-        }
+        //     }
+        //     else
+        //     {
+        //         return redirect('/');
+        //     }
+        // }
+        // else
+        // {
+        //     return redirect('/');
+        // }
     }
 }

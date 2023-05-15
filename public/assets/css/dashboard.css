@@ -26950,3 +26950,10 @@ aside#sidenav-main {
 .nav-link-text{
   color: white;
 }
+
+.btn-outline-primary:hover:not(.active) {
+    background-color: #5e72e4;
+    opacity: .75;
+    box-shadow: none;
+    color: white;
+}

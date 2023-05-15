@@ -27,4 +27,5 @@ Route::group(['middleware' => ['auth']], function() {
 	Route::post('com-update/{id}', [App\Http\Controllers\ComplaintController::class, 'update']);
 	// Poloce Station
 	Route::get('Police-Station', [App\Http\Controllers\PoliceStationController::class, 'police_station']);
+	
 });

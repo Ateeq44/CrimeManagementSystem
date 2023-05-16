@@ -11,9 +11,6 @@
     @if(@Auth::user()->role_as==1)
     <li class="nav-item">
       <a class="nav-link" href="{{ url('/') }}">
-        <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-          <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
-        </div>
         <span class="nav-link-text ms-1">Dashboard</span>
       </a>
     </li>
@@ -22,30 +19,34 @@
     @if(@Auth::user()->role_as==0 || @Auth::user()->role_as==1 )
     <li class="nav-item">
       <a class="nav-link " href="{{ url('complaint') }}">
-        <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-          <img src="{{asset('assets/img/complaint.png')}}">
-        </div>
         <span class="nav-link-text ms-1">Complaint</span>
       </a>
     </li>
     @endif
-    @if(@Auth::user()->role_as==1)
+    @if(@Auth::user()->role_as==1 )
     <li class="nav-item">
       <a class="nav-link " href="{{ url('Police-Station') }}">
-        <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-          <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
-        </div>
         <span class="nav-link-text ms-1">Police Station</span>
       </a>
     </li>
     @endif
+    @if(@Auth::user()->role_as==1 || @Auth::user()->role_as==1)
+    <li class="nav-item">
+      <a class="nav-link " href="{{ url('criminal') }}">
+        <span class="nav-link-text ms-1">Criminal</span>
+      </a>
+    </li>
+    @endif
+
+    <li class="nav-item">
+      <a class="nav-link " href="{{ url('Section') }}">
+        <span class="nav-link-text ms-1">PENAL CODE & Section</span>
+      </a>
+    </li>
     
 
     <li class="nav-item">
       <a class="nav-link " href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-        <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-          <i class="ni ni-collection text-info text-sm opacity-10"></i>
-        </div>
         <span class="nav-link-text ms-1">Log Out</span>
       </a>
       <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

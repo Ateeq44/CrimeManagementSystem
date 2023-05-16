@@ -27,5 +27,13 @@ Route::group(['middleware' => ['auth']], function() {
 	Route::post('com-update/{id}', [App\Http\Controllers\ComplaintController::class, 'update']);
 	// Poloce Station
 	Route::get('Police-Station', [App\Http\Controllers\PoliceStationController::class, 'police_station']);
-	
+	Route::post('po-submit', [App\Http\Controllers\PoliceStationController::class, 'store']);
+	Route::get('po_delete/{id}', [App\Http\Controllers\PoliceStationController::class, 'delete']);
+	Route::get('po_edit/{id}', [App\Http\Controllers\PoliceStationController::class, 'edit']);
+	Route::post('po-update/{id}', [App\Http\Controllers\PoliceStationController::class, 'update']);
+	// penal code section
+	Route::get('Section', [App\Http\Controllers\AdminController::class, 'Section']);
+	// Criminals
+	Route::get('criminal', [App\Http\Controllers\CriminalController::class, 'criminal']);
+
 });

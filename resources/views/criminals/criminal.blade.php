@@ -1,45 +1,4 @@
-    <style type="text/css">
-        .dropbtn {
-          background-color: #3498DB;
-          color: white;
-          padding: 16px;
-          font-size: 16px;
-          border: none;
-          cursor: pointer;
-      }
-
-      .dropbtn:hover, .dropbtn:focus {
-          background-color: #2980B9;
-      }
-
-      .dropdown {
-          position: relative;
-          display: inline-block;
-      }
-
-      .dropdown-content {
-          display: none;
-          position: absolute;
-          background-color: #f1f1f1;
-          min-width: 160px;
-          overflow: auto;
-          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-          z-index: 1;
-      }
-
-      .dropdown-content a {
-          color: black;
-          padding: 12px 16px;
-          text-decoration: none;
-          display: block;
-      }
-
-      .dropdown a:hover {background-color: #ddd;}
-
-      .show {display: block;}
-  </style>
   @extends('layout.app')
-
   <title>
     Complaint
 </title>
@@ -62,10 +21,10 @@
                 </div>
                 <div class="modal-body">
                     <h3 class="text-center mb-5">
-                     Enter New Complain
-                 </h3>
+                       Enter New Complain
+                   </h3>
 
-                 <form action="{{ url('com-submit') }}" method="POST">
+                   <form action="{{ url('criminal-submit') }}" method="POST">
                     @csrf
                     <div class="form-outline mb-4">
                         <label class="form-label" >Full Name</label>
@@ -144,7 +103,7 @@
             <th>Action</th>
         </tr>
     </thead>
-    <tbody>
+    {{-- <tbody>
         @foreach($complaint as $key => $value)
         <tr>
             <th scope="row">{{++$key}}</th>
@@ -162,11 +121,11 @@
                     <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"></button>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="#">Show</a>
-                      <a class="dropdown-item" href="{{ url('com_edit/'.$value->id) }}">Edit</a>
-                      <a class="dropdown-item"  data-bs-toggle="modal" data-bs-target="#exampleModal1">Delete</a>
-                  </div>
-              </div>
-                {{-- <select>
+                        <a class="dropdown-item" href="{{ url('com_edit/'.$value->id) }}">Edit</a>
+                        <a class="dropdown-item"  data-bs-toggle="modal" data-bs-target="#exampleModal1">Delete</a>
+                    </div>
+                </div>
+                <select>
                     
                     <option><a class="btn btn-danger" href="">Delete</a></option>
                     <option>
@@ -174,11 +133,11 @@
                     </option>
                     <option></option>
                 </select> --}}
-                {{-- <a class="btn btn-danger" href="{{ url('com_delete/'.$value->id) }}">Delete</a> --}}
+                {{-- <a class="btn btn-danger" href="{{ url('com_delete/'.$value->id) }}">Delete</a> 
             </td>        
         </tr>
         @endforeach
-    </tbody>
+    </tbody> --}}
 </table>
 </div>
 </div>
@@ -194,11 +153,11 @@
     </div>
     <div class="modal-body">
         <h5 class="mb-5">
-         Do you want to delete
-     </h5>
- </div>
- <div class="modal-footer">
-    <a href="{{ url('com_delete/'.$value->id) }}" class="btn btn-danger" data-dismiss="modal">Delete</a>
+           Do you want to delete
+       </h5>
+   </div>
+   <div class="modal-footer">
+    {{-- <a href="{{ url('com_delete/'.$value->id) }}" class="btn btn-danger" data-dismiss="modal">Delete</a> --}}
 </div>
 </div>
 </div>

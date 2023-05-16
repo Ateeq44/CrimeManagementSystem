@@ -36,6 +36,9 @@
   </main>
 
   <!--   Core JS Files   -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://kit.fontawesome.com/f5eb8f10bc.js" crossorigin="anonymous"></script>
   <script src="{{ asset('assets/js/core/popper.min.js')}}"></script>
   <script src="{{ asset('assets/js/core/bootstrap.min.js')}}"></script>
@@ -143,6 +146,9 @@
     swal("{{session('status')}}");
   </script>
   @endif
-  @yield('script')
+
+  <script type="text/javascript">
+    @yield('script')
+  </script>
 </body>
 </html>

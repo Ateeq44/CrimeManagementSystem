@@ -20,6 +20,7 @@
   <link href="{{asset('assets/css/nucleo-svg.css')}}" rel="stylesheet" />
   <!-- CSS Files -->
   <link id="pagestyle" href="{{asset('assets/css/dashboard.css?v=2.0.4')}}" rel="stylesheet" />
+  <link id="pagestyle" href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet" />
 </head>
 <body>
 

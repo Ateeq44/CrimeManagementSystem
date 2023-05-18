@@ -26996,3 +26996,7 @@ border-radius: 15px;
 .dropdown a:hover {background-color: #ddd;}
 
 .show {display: block;}
+.dropdown-toggle:empty::after {
+  margin-left: -13px !important;
+  margin-top: -7px !important;
+}

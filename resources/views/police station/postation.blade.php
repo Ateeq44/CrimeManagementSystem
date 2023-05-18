@@ -9,8 +9,11 @@
 <div class="row">
     <div class="col-xl-12 col-sm-12 mb-xl-0 mb-4">
         <div class="card">
-          <div class="card-body p-3 border-radius-0">
+            <div class="card-header">
+                
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add New</button>
+            </div>
+          <div class="card-body p-3 border-radius-0">
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog modal-lg">
                 <div class="modal-content">
@@ -43,14 +46,7 @@
         </div>
     </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<hr class="bg-dark">
-<div>
-    <div class="table-responsive h-100">
-      <table class="table">
+<table class="table">
         <thead>
           <tr>
             <th>#</th>
@@ -67,9 +63,9 @@
             <td>{{ @$value->contact_no }}</td>
             <td>
                 <div class="dropdown">
-                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"></button>
+                    <button type="button" class="btn btn-primary dropdown-toggle" style="padding: 18px 30px;" data-toggle="dropdown"></button>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Show</a>
+                        {{-- <a class="dropdown-item" href="#">Show</a> --}}
                         <a class="dropdown-item" href="{{ url('po_edit/'.$value->id) }}">Edit</a>
                         <a class="dropdown-item"  data-bs-toggle="modal" data-bs-target="#exampleModal1">Delete</a>
                     </div>
@@ -80,6 +76,12 @@
 
     </tbody>
 </table>
+</div>
+</div>
+</div>
+</div>
+
+      
 </div>
 </div>
 <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

@@ -35,5 +35,19 @@ Route::group(['middleware' => ['auth']], function() {
 	Route::get('Section', [App\Http\Controllers\AdminController::class, 'Section']);
 	// Criminals
 	Route::get('criminal', [App\Http\Controllers\CriminalController::class, 'criminal']);
+	Route::post('criminal-submit', [App\Http\Controllers\CriminalController::class, 'store']);
+	Route::get('criminals_delete/{id}', [App\Http\Controllers\CriminalController::class, 'delete']);
+	Route::get('criminals_edit/{id}', [App\Http\Controllers\CriminalController::class, 'edit']);
+	Route::get('view/{id}', [App\Http\Controllers\CriminalController::class, 'view']);
+	// Criminal Profile Details
+	Route::post('arrest', [App\Http\Controllers\CriminalController::class, 'arrest']);
+	Route::post('fir', [App\Http\Controllers\CriminalController::class, 'fir']);
+	Route::post('Payment', [App\Http\Controllers\CriminalController::class, 'Payment']);
+	Route::post('PhoneNumber', [App\Http\Controllers\CriminalController::class, 'PhoneNumber']);
+	Route::post('Travel', [App\Http\Controllers\CriminalController::class, 'Travel']);
+	Route::post('Family', [App\Http\Controllers\CriminalController::class, 'Family']);
+	Route::post('Property', [App\Http\Controllers\CriminalController::class, 'Property']);
+
+
 
 });

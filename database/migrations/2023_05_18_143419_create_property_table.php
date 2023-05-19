@@ -15,6 +15,11 @@ class CreatePropertyTable extends Migration
     {
         Schema::create('property', function (Blueprint $table) {
             $table->id();
+            $table->string('type')->nullable();
+            $table->string('E_number')->nullable();
+            $table->string('F_number')->nullable();
+            $table->string('remarks')->nullable();
+            $table->bigInteger('cri_id')->nullable();
             $table->timestamps();
         });
     }

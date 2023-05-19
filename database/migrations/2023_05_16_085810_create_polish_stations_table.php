@@ -16,7 +16,7 @@ class CreatePolishStationsTable extends Migration
         Schema::create('polish_stations', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->Text('address');
+            $table->Text('contact_no');
             $table->timestamps();
         });
     }

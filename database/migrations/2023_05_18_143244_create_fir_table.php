@@ -15,6 +15,12 @@ class CreateFirTable extends Migration
     {
         Schema::create('fir', function (Blueprint $table) {
             $table->id();
+            $table->string('fir_number')->nullable();
+            $table->string('crime')->nullable();
+            $table->string('remarks')->nullable();
+            $table->string('doc')->nullable();
+            $table->string('po_station')->nullable();
+            $table->bigInteger('cri_id')->nullable();
             $table->timestamps();
         });
     }

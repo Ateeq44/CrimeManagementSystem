@@ -15,6 +15,9 @@ class CreateArrestTable extends Migration
     {
         Schema::create('arrest', function (Blueprint $table) {
             $table->id();
+            $table->string('description')->nullable();
+            $table->string('date')->nullable();
+            $table->bigInteger('cri_id')->nullable();
             $table->timestamps();
         });
     }

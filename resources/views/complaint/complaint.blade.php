@@ -52,7 +52,7 @@
 
                     <div class="form-outline mb-4">
                         <label class="form-label" >Police Station</label>
-                        <input type="text" name="police_station" class="form-control">
+                        <input type="text" name="police_station" value="{{ Auth::user()->name }}" class="form-control">
                     </div>
 
                     <div class="form-outline mb-4">
@@ -126,16 +126,7 @@
                 
             </td>        
         </tr>
-        @endforeach
-    </tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
@@ -155,6 +146,16 @@
 </div>
 </div>
 </div>
+        @endforeach
+    </tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
 
 @endsection
 @section('script')

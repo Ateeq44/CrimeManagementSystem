@@ -15,6 +15,13 @@ class CreateTravelTable extends Migration
     {
         Schema::create('travel', function (Blueprint $table) {
             $table->id();
+            $table->string('dtravel')->nullable();
+            $table->string('f_number')->nullable();
+            $table->string('status')->nullable();
+            $table->string('passport')->nullable();
+            $table->string('s_name')->nullable();
+            $table->string('destination')->nullable();
+            $table->bigInteger('cri_id')->nullable();
             $table->timestamps();
         });
     }

@@ -51,7 +51,7 @@ class ComplaintController extends Controller
     public function update(Request $request, $id)
     {
         $complaint = complaint::find($id);
-        $complaint->user_id =  $request->input('user_id');
+        $complaint->user_id = Auth::id();
         $complaint->name =  $request->input('name');
         $complaint->cnic =  $request->input('cnic');
         $complaint->address =  $request->input('address');

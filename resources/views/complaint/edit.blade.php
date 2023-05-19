@@ -38,7 +38,7 @@
 
             <div class="form-outline mb-4">
                 <label class="form-label" >Police Station</label>
-                <input type="text" name="police_station" value="{{ $complaint->police_station }}"  class="form-control">
+                <input type="text" name="police_station" value="{{ Auth::user()->name }}"  class="form-control">
             </div>
 
             <div class="form-outline mb-4">

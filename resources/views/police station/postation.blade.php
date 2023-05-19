@@ -72,19 +72,7 @@
                 </div>
             </td>        
         </tr>
-        @endforeach 
-
-    </tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-
-      
-</div>
-</div>
-<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
@@ -104,6 +92,19 @@
 </div>
 </div>
 </div>
+        @endforeach 
+
+    </tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+
+      
+</div>
+</div>
+
 
 @endsection
 @section('script')

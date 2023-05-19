@@ -23,14 +23,14 @@
       </a>
     </li>
     @endif
-    @if(@Auth::user()->role_as==1 )
+    @if(@Auth::user()->role_as==0 || @Auth::user()->role_as==1 )
     <li class="nav-item">
       <a class="nav-link " href="{{ url('Police-Station') }}">
         <span class="nav-link-text ms-1">Police Station</span>
       </a>
     </li>
     @endif
-    @if(@Auth::user()->role_as==1 || @Auth::user()->role_as==1)
+    @if(@Auth::user()->role_as==0 || @Auth::user()->role_as==1)
     <li class="nav-item">
       <a class="nav-link " href="{{ url('criminal') }}">
         <span class="nav-link-text ms-1">Criminal</span>
@@ -43,7 +43,12 @@
         <span class="nav-link-text ms-1">PENAL CODE & Section</span>
       </a>
     </li>
-    
+
+    <li class="nav-item">
+      <a class="nav-link " href="{{ url('user') }}">
+        <span class="nav-link-text ms-1">Users</span>
+      </a>
+    </li>
 
     <li class="nav-item">
       <a class="nav-link " href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">

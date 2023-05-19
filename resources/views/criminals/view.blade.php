@@ -46,7 +46,7 @@
                         <h6 class="font-weight-bold">Karwai</h6>
                     </div>
                     <div class="col-md-4 mt-3">
-                        <h6 class="">{{ $show->karwai }}</h6>
+                        <h6 class="">{{ $show->karwai }} Cr.PC</h6>
                     </div>
                 </div>
             </div>
@@ -72,20 +72,22 @@
                 </tr>
             </thead>
             <tbody>
+                @foreach($arrest as $key => $value)
                 <tr>
-                    <th scope="row"></th>
-                    <td></td>
-                    <td></td>
+                    <th scope="row">{{ ++$key }}</th>
+                    <td>{{ $value->description }}</td>
+                    <td>{{ $value->date }}</td>
                     <td>
                         <div class="dropdown">
                             <button type="button" class="btn btn-primary dropdown-toggle" style="padding: 18px 30px;" data-toggle="dropdown"></button>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="">Edit</a>
+                                <a class="dropdown-item" href="{{url('arrest_edit/'.$value->id)}}">Edit</a>
                                 <a class="dropdown-item"  data-bs-toggle="modal" data-bs-target="#exampleModal1">Delete</a>
                             </div>
                         </div>
                     </td>        
                 </tr>
+                @endforeach
             </tbody> 
         </table>
         </div>
@@ -111,23 +113,25 @@
         </tr>
     </thead>
     <tbody>
+        @foreach($Fir as $key => $value)
         <tr>
-            <th scope="row"></th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <th scope="row">{{ ++$key }}</th>
+            <td>{{ $value->fir_number }}</td>
+            <td>{{ $value->crime }}</td>
+            <td>{{ $value->remarks }}</td>
+            <td>{{ $value->doc }}</td>
+            <td>{{ $value->po_station }}</td>
             <td>
                 <div class="dropdown">
                     <button type="button" class="btn btn-primary dropdown-toggle" style="padding: 18px 30px;" data-toggle="dropdown"></button>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="">Edit</a>
+                        <a class="dropdown-item" href="{{url('fir_edit/'.$value->id)}}">Edit</a>
                         <a class="dropdown-item"  data-bs-toggle="modal" data-bs-target="#exampleModal1">Delete</a>
                     </div>
                 </div>
             </td>        
         </tr>
+        @endforeach
     </tbody> 
 </table>
 </div>
@@ -154,24 +158,26 @@
         </tr>
     </thead>
     <tbody>
+        @foreach($Payment as $key => $value)
         <tr>
-            <th scope="row"></th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <th scope="row">{{ ++$key }}</th>
+            <td>{{ $value->send }}</td>
+            <td>{{ $value->method }}</td>
+            <td>{{ $value->amount }}</td>
+            <td>{{ $value->n_sender }}</td>
+            <td>{{ $value->account }}</td>
+            <td>{{ $value->purpose }}</td>
             <td>
                 <div class="dropdown">
                     <button type="button" class="btn btn-primary dropdown-toggle" style="padding: 18px 30px;" data-toggle="dropdown"></button>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="">Edit</a>
+                        <a class="dropdown-item" href="{{url('Payment_edit/'.$value->id)}}">Edit</a>
                         <a class="dropdown-item"  data-bs-toggle="modal" data-bs-target="#exampleModal1">Delete</a>
                     </div>
                 </div>
             </td>        
         </tr>
+        @endforeach
     </tbody> 
 </table>
 </div>
@@ -194,20 +200,22 @@
                 </tr>
             </thead>
             <tbody>
+                @foreach($PhoneNumber as $key => $value)
                 <tr>
-                    <th scope="row"></th>
-                    <td></td>
-                    <td></td>
+                    <th scope="row">{{ ++$key }}</th>
+                    <td>{{ $value->n_number }}</td>
+                    <td>{{ $value->network }}</td>
                     <td>
                         <div class="dropdown">
                             <button type="button" class="btn btn-primary dropdown-toggle" style="padding: 18px 30px;" data-toggle="dropdown"></button>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="">Edit</a>
+                                <a class="dropdown-item" href="{{url('PhoneNumber_edit/'.$value->id)}}">Edit</a>
                                 <a class="dropdown-item"  data-bs-toggle="modal" data-bs-target="#exampleModal1">Delete</a>
                             </div>
                         </div>
                     </td>        
                 </tr>
+                @endforeach
             </tbody> 
         </table>
     </div>
@@ -235,24 +243,26 @@
                 </tr>
             </thead>
             <tbody>
+                @foreach($Travel as $key => $value)
                 <tr>
-                    <th scope="row"></th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <th scope="row">{{ ++$key }}</th>
+                    <td>{{ $value->dtravel }}</td>
+                    <td>{{ $value->f_number }}</td>
+                    <td>{{ $value->status }}</td>
+                    <td>{{ $value->passport }}</td>
+                    <td>{{ $value->s_name }}</td>
+                    <td>{{ $value->destination }}</td>
                     <td>
                         <div class="dropdown">
                             <button type="button" class="btn btn-primary dropdown-toggle" style="padding: 18px 30px;" data-toggle="dropdown"></button>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="">Edit</a>
+                                <a class="dropdown-item" href="{{url('Travel_edit/'.$value->id)}}">Edit</a>
                                 <a class="dropdown-item"  data-bs-toggle="modal" data-bs-target="#exampleModal1">Delete</a>
                             </div>
                         </div>
                     </td>        
                 </tr>
+                @endforeach
             </tbody> 
         </table>
     </div>
@@ -278,22 +288,24 @@
                 </tr>
             </thead>
             <tbody>
+                @foreach($Family as $key => $value)
                 <tr>
-                    <th scope="row"></th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <th scope="row">{{ ++$key }}</th>
+                    <td>{{ $value->relation }}</td>
+                    <td>{{ $value->po }}</td>
+                    <td>{{ $value->rel_po }}</td>
+                    <td>{{ $value->passport }}</td>
                     <td>
                         <div class="dropdown">
                             <button type="button" class="btn btn-primary dropdown-toggle" style="padding: 18px 30px;" data-toggle="dropdown"></button>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="">Edit</a>
+                                <a class="dropdown-item" href="{{url('Family_edit/'.$value->id)}}">Edit</a>
                                 <a class="dropdown-item"  data-bs-toggle="modal" data-bs-target="#exampleModal1">Delete</a>
                             </div>
                         </div>
                     </td>        
                 </tr>
+                @endforeach
             </tbody> 
         </table>
     </div>
@@ -319,22 +331,24 @@
                 </tr>
             </thead>
             <tbody>
+                @foreach($Property as $key => $value)
                 <tr>
-                    <th scope="row"></th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <th scope="row">{{ ++$key }}</th>
+                    <td>{{ $value->type }}</td>
+                    <td>{{ $value->E_number }}</td>
+                    <td>{{ $value->F_number }}</td>
+                    <td>{{ $value->remarks }}</td>
                     <td>
                         <div class="dropdown">
                             <button type="button" class="btn btn-primary dropdown-toggle" style="padding: 18px 30px;" data-toggle="dropdown"></button>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="">Edit</a>
+                                <a class="dropdown-item" href="{{url('Property_edit/'.$value->id)}}">Edit</a>
                                 <a class="dropdown-item"  data-bs-toggle="modal" data-bs-target="#exampleModal1">Delete</a>
                             </div>
                         </div>
                     </td>        
                 </tr>
+                @endforeach
             </tbody> 
         </table>
     </div>
@@ -367,7 +381,7 @@
                         <label class="form-label" >Date Of Arrest</label>
                         <input type="date" name="date" class="form-control">
                     </div>
-
+                    <input type="hidden" name="cri_id" value="{{ $show->id }}">
                     <button type="submit" class="btn btn-primary btn-lg w-100 btn-block mb-4">Submit</button>
                 </form>
 
@@ -389,7 +403,7 @@
             </div>
             <div class="modal-body">
 
-                <form action="{{ url('fir') }}" method="POST">
+                <form action="{{ url('Fir') }}" method="POST">
                     @csrf
 
                     <div class="form-outline mb-4">
@@ -399,7 +413,7 @@
 
                     <div class="form-outline mb-4">
                         <label class="form-label" >Crime</label>
-                        <select class="form-control" name="tocrime">
+                        <select class="form-control" name="crime">
                             <option>Theft</option>
                             <option>Robbery</option>
                             <option>Pick Pocket</option>
@@ -418,7 +432,7 @@
 
                     <div class="form-outline mb-4">
                         <label class="form-label">Date Of Crime</label>
-                        <textarea class="form-control" name="doc"></textarea>
+                        <input type="date" class="form-control" name="doc">
                     </div>
 
                     <div class="form-outline mb-4">
@@ -429,10 +443,10 @@
                             @endforeach
                         </select>
                     </div>
+                    <input type="hidden" name="cri_id" value="{{ $show->id }}">
 
                     <button type="submit" class="btn btn-primary btn-lg w-100 btn-block mb-4">Submit</button>
                 </form>
-
             </div>
         </div>
     </div>
@@ -455,13 +469,13 @@
                     @csrf
                     <div class="form-outline mb-4">
                         <label class="form-label" >Send/Receive</label>
-                        <input type="text" name="name" class="form-control">
+                        <input type="text" name="Send" class="form-control">
                     </div>
 
                     <div class="form-outline mb-4">
                         <label class="form-label" >Method</label>
                         {{-- <input type="text" name="fname" class="form-control"> --}}
-                        <select class="form-control">
+                        <select class="form-control" name="method">
                             <option>Bank Transfer</option>
                             <option>Debit Cards</option>
                             <option>Credit Cards</option>
@@ -475,23 +489,24 @@
 
                     <div class="form-outline mb-4">
                         <label class="form-label" >Amount</label>
-                        <input type="text" name="cnic" class="form-control">
+                        <input type="text" name="amount" class="form-control">
                     </div>
 
                     <div class="form-outline mb-4">
                         <label class="form-label">Name Of Sender/Receiver</label>
-                        <input type="text" name="cnic" class="form-control">
+                        <input type="text" name="n_sender" class="form-control">
                     </div>
 
                     <div class="form-outline mb-4">
                         <label class="form-label">Account Of Sender/Receiver</label>
-                        <input type="text" name="cnic" class="form-control">
+                        <input type="text" name="account" class="form-control">
                     </div>
 
                     <div class="form-outline mb-4">
                         <label class="form-label">Purpose</label>
-                        <input type="text" name="cnic" class="form-control">
+                        <input type="text" name="purpose" class="form-control">
                     </div>
+                    <input type="hidden" name="cri_id" value="{{ $show->id }}">
 
                     <button type="submit" class="btn btn-primary btn-lg w-100 btn-block mb-4">Submit</button>
                 </form>
@@ -518,13 +533,14 @@
                     @csrf
                     <div class="form-outline mb-4">
                         <label class="form-label" >Mobile Number</label>
-                        <input type="text" name="name" class="form-control">
+                        <input type="text" name="m_number" class="form-control">
                     </div>
 
                     <div class="form-outline mb-4">
                         <label class="form-label" >Network</label>
-                        <input type="text" name="fname" class="form-control">
+                        <input type="text" name="network" class="form-control">
                     </div>
+                    <input type="hidden" name="cri_id" value="{{ $show->id }}">
 
                     <button type="submit" class="btn btn-primary btn-lg w-100 btn-block mb-4">Submit</button>
                 </form>
@@ -556,28 +572,29 @@
 
                     <div class="form-outline mb-4">
                         <label class="form-label" >Flight Number</label>
-                        <input type="text" name="fname" class="form-control">
+                        <input type="text" name="f_number" class="form-control">
                     </div>
 
                     <div class="form-outline mb-4">
                         <label class="form-label" >Travel Status</label>
-                        <input type="text" name="cnic" class="form-control">
+                        <input type="text" name="status" class="form-control">
                     </div>
 
                     <div class="form-outline mb-4">
                         <label class="form-label">Passport</label>
-                        <input type="text" name="cnic" class="form-control">
+                        <input type="text" name="passport" class="form-control">
                     </div>
 
                     <div class="form-outline mb-4">
                         <label class="form-label">Site Name</label>
-                        <input type="text" name="cnic" class="form-control">
+                        <input type="text" name="s_name" class="form-control">
                     </div>
 
                     <div class="form-outline mb-4">
                         <label class="form-label">Destination</label>
-                        <input type="text" name="cnic" class="form-control">
+                        <input type="text" name="destination" class="form-control">
                     </div>
+                    <input type="hidden" name="cri_id" value="{{ $show->id }}">
 
                     <button type="submit" class="btn btn-primary btn-lg w-100 btn-block mb-4">Submit</button>
                 </form>
@@ -604,28 +621,28 @@
                     @csrf
                     <div class="form-outline mb-4">
                         <label class="form-label" >Relation</label>
-                        <input type="text" name="name" class="form-control">
+                        <input type="text" name="relation" class="form-control">
                     </div>
 
                     <div class="form-outline mb-4">
                         <label class="form-label" >Po</label>
-                        <input type="text" name="fname" class="form-control">
+                        <input type="text" name="po" class="form-control">
                     </div>
 
                     <div class="form-outline mb-4">
                         <label class="form-label" >Relation PO</label>
-                        <input type="text" name="cnic" class="form-control">
+                        <input type="text" name="rel_po" class="form-control">
                     </div>
 
                     <div class="form-outline mb-4">
                         <label class="form-label">Passport</label>
-                        <input type="text" name="cnic" class="form-control">
+                        <input type="text" name="passport" class="form-control">
 
                     </div>
+                    <input type="hidden" name="cri_id" value="{{ $show->id }}">
 
                     <button type="submit" class="btn btn-primary btn-lg w-100 btn-block mb-4">Submit</button>
                 </form>
-
             </div>
         </div>
     </div>
@@ -648,23 +665,24 @@
                     @csrf
                     <div class="form-outline mb-4">
                         <label class="form-label" >Type</label>
-                        <input type="text" name="name" class="form-control">
+                        <input type="text" name="type" class="form-control">
                     </div>
 
                     <div class="form-outline mb-4">
                         <label class="form-label" >Engine Number</label>
-                        <input type="text" name="fname" class="form-control">
+                        <input type="text" name="E_number" class="form-control">
                     </div>
 
                     <div class="form-outline mb-4">
                         <label class="form-label" >Frame Number</label>
-                        <input type="text" name="cnic"  oninput="formatCNIC(this)" maxlength="15" class="form-control">
+                        <input type="text" name="F_number"  oninput="formatCNIC(this)" maxlength="15" class="form-control">
                     </div>
 
                     <div class="form-outline mb-4">
                         <label class="form-label">Remarks</label>
-                        <textarea class="form-control" name="address"></textarea>
+                        <textarea class="form-control" name="remarks"></textarea>
                     </div>
+                    <input type="hidden" name="cri_id" value="{{ $show->id }}">
 
                     <button type="submit" class="btn btn-primary btn-lg w-100 btn-block mb-4">Submit</button>
                 </form>
@@ -673,10 +691,5 @@
         </div>
     </div>
 </div>
-
-@endsection
-@section('script')
-
-
 
 @endsection

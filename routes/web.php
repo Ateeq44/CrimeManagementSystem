@@ -38,10 +38,11 @@ Route::group(['middleware' => ['auth']], function() {
 	Route::post('criminal-submit', [App\Http\Controllers\CriminalController::class, 'store']);
 	Route::get('criminals_delete/{id}', [App\Http\Controllers\CriminalController::class, 'delete']);
 	Route::get('criminals_edit/{id}', [App\Http\Controllers\CriminalController::class, 'edit']);
+	Route::post('criminals_update/{id}', [App\Http\Controllers\CriminalController::class, 'update']);
 	Route::get('view/{id}', [App\Http\Controllers\CriminalController::class, 'view']);
 	// Criminal Profile Details
-	Route::post('arrest', [App\Http\Controllers\CriminalController::class, 'arrest']);
-	Route::post('fir', [App\Http\Controllers\CriminalController::class, 'fir']);
+	Route::post('Arrest', [App\Http\Controllers\CriminalController::class, 'arrest']);
+	Route::post('Fir', [App\Http\Controllers\CriminalController::class, 'fir']);
 	Route::post('Payment', [App\Http\Controllers\CriminalController::class, 'Payment']);
 	Route::post('PhoneNumber', [App\Http\Controllers\CriminalController::class, 'PhoneNumber']);
 	Route::post('Travel', [App\Http\Controllers\CriminalController::class, 'Travel']);

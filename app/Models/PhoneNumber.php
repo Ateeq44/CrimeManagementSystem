@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class PhoneNumber extends Model
 {
     use HasFactory;
+    protected $table ='phone';
+    protected $fillable = [
+        'n_number',
+        'network',
+        'cri_id',
+    ];
 }

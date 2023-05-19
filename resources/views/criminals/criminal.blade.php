@@ -53,11 +53,7 @@
 
                         <div class="form-outline mb-4">
                             <label class="form-label">Police Station</label>
-                            <select class="form-control"  name="po_station">
-                                @foreach($po_station as $value)
-                                <option>{{$value->name}}</option>
-                                @endforeach
-                            </select>
+                            <input class="form-control" name="po_station" type="text" value="{{ Auth::user()->name }}">
                         </div>
 
                         <div class="form-outline mb-4">
@@ -111,18 +107,7 @@
                 </div>
             </td>        
         </tr>
-        @endforeach
-    </tbody> 
-</table>
-</div>
-</div>
-</div>
-</div>
-</div>
-    
-</div>
-{{-- <button type="button" class="btn btn-primary">Add Criminal</button> --}}
-<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
@@ -142,6 +127,18 @@
 </div>
 </div>
 </div>
+        @endforeach
+    </tbody> 
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+    
+</div>
+{{-- <button type="button" class="btn btn-primary">Add Criminal</button> --}}
+
 
 @endsection
 @section('script')

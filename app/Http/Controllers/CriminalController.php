@@ -149,7 +149,6 @@ class CriminalController extends Controller
     {
         $data = [
             'relation' => $request->input('relation'),
-            'po' => $request->input('po'),
             'rel_po' => $request->input('rel_po'),
             'cri_id' => $request->input('cri_id'),
         ];

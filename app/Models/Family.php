@@ -11,7 +11,6 @@ class Family extends Model
     protected $table ='family_tree';
     protected $fillable = [
         'relation',
-        'po',
         'rel_po',
         'cri_id',
     ];

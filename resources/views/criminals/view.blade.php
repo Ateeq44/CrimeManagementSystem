@@ -340,7 +340,6 @@ input:checked + .slider:before {
                 <tr>
                     <th>#</th>
                     <th>Relation</th>
-                    <th>Po</th>
                     <th>Relation PO</th>
                     <th>Action</th>
 
@@ -351,7 +350,6 @@ input:checked + .slider:before {
                 <tr>
                     <th scope="row">{{ ++$key }}</th>
                     <td>{{ $value->relation }}</td>
-                    <td>{{ $value->po }}</td>
                     <td>{{ $value->rel_po }}</td>
                     <td>
                         <div class="dropdown">
@@ -679,12 +677,17 @@ input:checked + .slider:before {
                     @csrf
                     <div class="form-outline mb-4">
                         <label class="form-label" >Relation</label>
-                        <input type="text" name="relation" class="form-control">
-                    </div>
-
-                    <div class="form-outline mb-4">
-                        <label class="form-label" >Po</label>
-                        <input type="text" name="po" class="form-control">
+                        <select class="form-control" name="relation">
+                            <option>select One</option>
+                            <option>Brother</option>
+                            <option>Sister</option>
+                            <option>Father</option>
+                            <option>Mother</option>
+                            <option>Spouse</option>
+                            <option>Son</option>
+                            <option>Daughter</option>
+                            <option>Husband</option>
+                        </select>
                     </div>
 
                     <div class="form-outline mb-4">

@@ -16,7 +16,6 @@ class CreateFamilyTreeTable extends Migration
         Schema::create('family_tree', function (Blueprint $table) {
             $table->id();
             $table->string('relation')->nullable();
-            $table->string('po')->nullable();
             $table->string('rel_po')->nullable();
             $table->bigInteger('cri_id')->nullable();
             $table->timestamps();

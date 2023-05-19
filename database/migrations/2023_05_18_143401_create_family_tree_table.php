@@ -18,7 +18,6 @@ class CreateFamilyTreeTable extends Migration
             $table->string('relation')->nullable();
             $table->string('po')->nullable();
             $table->string('rel_po')->nullable();
-            $table->string('passport')->nullable();
             $table->bigInteger('cri_id')->nullable();
             $table->timestamps();
         });

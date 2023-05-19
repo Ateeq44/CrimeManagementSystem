@@ -151,7 +151,6 @@ class CriminalController extends Controller
             'relation' => $request->input('relation'),
             'po' => $request->input('po'),
             'rel_po' => $request->input('rel_po'),
-            'passport' => $request->input('passport'),
             'cri_id' => $request->input('cri_id'),
         ];
         $insert = Family::create($data);

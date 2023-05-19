@@ -342,7 +342,6 @@ input:checked + .slider:before {
                     <th>Relation</th>
                     <th>Po</th>
                     <th>Relation PO</th>
-                    <th>Passport</th>
                     <th>Action</th>
 
                 </tr>
@@ -354,7 +353,6 @@ input:checked + .slider:before {
                     <td>{{ $value->relation }}</td>
                     <td>{{ $value->po }}</td>
                     <td>{{ $value->rel_po }}</td>
-                    <td>{{ $value->passport }}</td>
                     <td>
                         <div class="dropdown">
                             <button type="button" class="btn btn-primary dropdown-toggle" style="padding: 18px 30px;" data-toggle="dropdown"></button>
@@ -694,11 +692,6 @@ input:checked + .slider:before {
                         <input type="text" name="rel_po" class="form-control">
                     </div>
 
-                    <div class="form-outline mb-4">
-                        <label class="form-label">Passport</label>
-                        <input type="text" name="passport" class="form-control">
-
-                    </div>
                     <input type="hidden" name="cri_id" value="{{ $show->id }}">
 
                     <button type="submit" class="btn btn-primary btn-lg w-100 btn-block mb-4">Submit</button>
@@ -723,33 +716,65 @@ input:checked + .slider:before {
 
                 <form action="{{ url('Property') }}" method="POST">
                     @csrf
-
-                    <label class="switch">
-                      <input type="checkbox" id="toggleButton"  checked>
-                      <span class="slider"></span>
-                    </label>
-
-                    <div id="div1">Div 1</div>
-                    <div id="div2" style="display: none;">Div 2</div>
                     <div class="form-outline mb-4">
                         <label class="form-label" >Type</label>
-                        <input type="text" name="type" class="form-control">
+                        <div class="d-flex">
+                            <div>Im-movable</div>
+                            <label class="switch ml-3">
+                              <input type="checkbox" id="toggleButton"  checked>
+                              <span class="slider"></span>
+                            </label>
+                            <div class="ml-3">movable</div>
+                        </div>
                     </div>
 
-                    <div class="form-outline mb-4">
-                        <label class="form-label" >Engine Number</label>
-                        <input type="text" name="E_number" class="form-control">
-                    </div>
+                    <div id="div1" style="display:none;">
+                        <div class="form-outline mb-4">
+                            <label class="form-label" >Type</label>
+                            <select class="form-control" name="type">
+                                <option class="disabled">Selct One</option>
+                                <option>Cycle</option>
+                                <option>Bike</option>
+                                <option>Car</option>
+                                <option>Miscellancous</option>
+                            </select>
+                        </div>
 
-                    <div class="form-outline mb-4">
-                        <label class="form-label" >Frame Number</label>
-                        <input type="text" name="F_number"  oninput="formatCNIC(this)" maxlength="15" class="form-control">
-                    </div>
+                        <div class="form-outline mb-4">
+                            <label class="form-label" >Engine Number</label>
+                            <input type="text" name="E_number" class="form-control">
+                        </div>
 
-                    <div class="form-outline mb-4">
-                        <label class="form-label">Remarks</label>
-                        <textarea class="form-control" name="remarks"></textarea>
+                        <div class="form-outline mb-4">
+                            <label class="form-label" >Frame Number</label>
+                            <input type="text" name="F_number"  oninput="formatCNIC(this)" maxlength="15" class="form-control">
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <label class="form-label">Remarks</label>
+                            <textarea class="form-control" name="remarks"></textarea>
+                        </div>
                     </div>
+                    <div id="div2" style="display: none;">
+                        <div class="form-outline mb-4">
+                            <label class="form-label" >Type</label>
+                            <select class="form-control" name="type">
+                                <option class="disabled">Selct One</option>
+                                <option>Shop</option>
+                                <option>House</option>
+                                <option>Land</option>
+                                <option>Live Stock</option>
+                                <option>Miscellancous</option>
+                            </select>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <label class="form-label">Remarks</label>
+                            <textarea class="form-control" name="remarks"></textarea>
+                        </div>
+                    </div>
+                    {{-- <div id="div2" style="display: none;">Div 2</div> --}}
+
                     <input type="hidden" name="cri_id" value="{{ $show->id }}">
 
                     <button type="submit" class="btn btn-primary btn-lg w-100 btn-block mb-4">Submit</button>

@@ -13,7 +13,6 @@ class Family extends Model
         'relation',
         'po',
         'rel_po',
-        'passport',
         'cri_id',
     ];
 }

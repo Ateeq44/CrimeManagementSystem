@@ -5,7 +5,27 @@
 </title>
 
 @section('content')
-
+<nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" data-scroll="false">
+      <div class="container-fluid d-flex align-items-baseline">
+  <nav aria-label="breadcrumb">
+    <h6 class="font-weight-bolder text-dark mb-0">Crime Management System</h6>
+  </nav>
+  <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+    <div class="ms-md-auto pe-md-3 d-flex align-items-center w-25">
+        <div class="input-group">
+            <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4 w-100">
+                <div class="input-group">
+                  <input type="search" placeholder="Search" aria-describedby="button-addon1" class="form-control border-0 bg-light">
+                  <div class="input-group-append d-flex">
+                    <button id="button-addon1" type="submit" class="btn btn-link text-primary d-flex align-items-center h-100"><i class="fa fa-search"></i></button>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+</nav>
 <div class="row">
     <div class="col-xl-12 col-sm-12 mb-xl-0 mb-4">
         <div class="card">
@@ -63,9 +83,8 @@
             <td>{{ @$value->contact_no }}</td>
             <td>
                 <div class="dropdown">
-                    <button type="button" class="btn btn-primary dropdown-toggle" style="padding: 18px 30px;" data-toggle="dropdown"></button>
+                    <button type="button" class="btn btn-lights dropdown-toggle" style="padding: 18px 30px;" data-toggle="dropdown"></button>
                     <div class="dropdown-menu">
-                        {{-- <a class="dropdown-item" href="#">Show</a> --}}
                         <a class="dropdown-item" href="{{ url('po_edit/'.$value->id) }}">Edit</a>
                         <a class="dropdown-item"  data-bs-toggle="modal" data-bs-target="#exampleModal1">Delete</a>
                     </div>

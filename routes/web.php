@@ -48,6 +48,22 @@ Route::group(['middleware' => ['auth']], function() {
 	Route::post('Travel', [App\Http\Controllers\CriminalController::class, 'Travel']);
 	Route::post('Family', [App\Http\Controllers\CriminalController::class, 'Family']);
 	Route::post('Property', [App\Http\Controllers\CriminalController::class, 'Property']);
+	// Criminal Profile Edit
+	Route::post('arrest_edit/{id}', [App\Http\Controllers\CriminalController::class, 'arrest_edit']);
+	Route::post('fir_edit/{id}', [App\Http\Controllers\CriminalController::class, 'fir_edit']);
+	Route::post('Payment_edit/{id}', [App\Http\Controllers\CriminalController::class, 'Payment_edit']);
+	Route::post('PhoneNumber_edit/{id}', [App\Http\Controllers\CriminalController::class, 'PhoneNumber_edit']);
+	Route::post('Travel_edit/{id}', [App\Http\Controllers\CriminalController::class, 'Travel_edit']);
+	Route::post('Family_edit/{id}', [App\Http\Controllers\CriminalController::class, 'Family_edit']);
+	Route::post('Property_edit/{id}', [App\Http\Controllers\CriminalController::class, 'Property_edit']);
+	// Criminal Profile Delete
+	Route::get('arrest_delete/{id}', [App\Http\Controllers\CriminalController::class, 'arrest_delete']);
+	Route::get('fir_delete/{id}', [App\Http\Controllers\CriminalController::class, 'fir_delete']);
+	Route::get('Payment_delete/{id}', [App\Http\Controllers\CriminalController::class, 'Payment_delete']);
+	Route::get('PhoneNumber_delete/{id}', [App\Http\Controllers\CriminalController::class, 'PhoneNumber_delete']);
+	Route::get('Travel_delete/{id}', [App\Http\Controllers\CriminalController::class, 'Travel_delete']);
+	Route::get('Family_delete/{id}', [App\Http\Controllers\CriminalController::class, 'Family_delete']);
+	Route::get('Property_delete/{id}', [App\Http\Controllers\CriminalController::class, 'Property_delete']);
 
 
 

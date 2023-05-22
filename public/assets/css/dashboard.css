@@ -27000,3 +27000,7 @@ border-radius: 15px;
   margin-left: -13px !important;
   margin-top: -7px !important;
 }
+.btn-lights{
+    background-color: #e4e7e9 !important ;
+    color: black; !important;
+}

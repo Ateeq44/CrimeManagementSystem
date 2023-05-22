@@ -45,7 +45,7 @@ input:focus + .slider {
 }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
+  -webkit-transform: translateX(26px);     
   -ms-transform: translateX(26px);
   transform: translateX(26px);
 }
@@ -58,18 +58,40 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
 </style>
-@extends('layout.app')
+@extends('layout.app')               
 <title>
     Criminal
 </title>
 @section('content')
+<nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" data-scroll="false">
+      <div class="container-fluid d-flex align-items-baseline">
+  <nav aria-label="breadcrumb">
+    <h6 class="font-weight-bolder text-dark mb-0">Crime Management System</h6>
+  </nav>
+  <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+    <div class="ms-md-auto pe-md-3 d-flex align-items-center w-25">
+        <div class="input-group">
+            <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4 w-100">
+                <div class="input-group">
+                  <input type="search" placeholder="Search" aria-describedby="button-addon1" class="form-control border-0 bg-light">
+                  <div class="input-group-append d-flex">
+                    <button id="button-addon1" type="submit" class="btn btn-link text-primary d-flex align-items-center h-100"><i class="fa fa-search"></i></button>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+</nav>
 <div class="row">
     <div class="col-xl-12 col-sm-12 mb-xl-0 mb-4">
         <div class="card">
             <div class="card-header">
                 <h5>Profile Details</h5>
-            </div>
+            </div> 
             <div class="card-body p-3 border-radius-0 my-3">
                 <div class="row ml-3">
                     <div class="col-md-2">
@@ -139,10 +161,10 @@ input:checked + .slider:before {
                     <td>{{ $value->date }}</td>
                     <td>
                         <div class="dropdown">
-                            <button type="button" class="btn btn-primary dropdown-toggle" style="padding: 18px 30px;" data-toggle="dropdown"></button>
+                            <button type="button" class="btn btn-lights dropdown-toggle" style="padding: 20px 30px;" data-toggle="dropdown"></button>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="{{url('arrest_edit/'.$value->id)}}">Edit</a>
-                                <a class="dropdown-item"  data-bs-toggle="modal" data-bs-target="#exampleModal1">Delete</a>
+                                <a class="dropdown-item delete-cart-item" data-url="{{ url('arrest_delete/'.$value->id) }}"  data-remove="list_{{$value->id}}">Delete</a>
                             </div>
                         </div>
                     </td>        
@@ -183,10 +205,10 @@ input:checked + .slider:before {
             <td>{{ $value->po_station }}</td>
             <td>
                 <div class="dropdown">
-                    <button type="button" class="btn btn-primary dropdown-toggle" style="padding: 18px 30px;" data-toggle="dropdown"></button>
+                    <button type="button" class="btn btn-lights dropdown-toggle" style="padding: 20px 30px;" data-toggle="dropdown"></button>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="{{url('fir_edit/'.$value->id)}}">Edit</a>
-                        <a class="dropdown-item"  data-bs-toggle="modal" data-bs-target="#exampleModal1">Delete</a>
+                        <a class="dropdown-item delete-cart-item" data-url="{{ url('fir_delete/'.$value->id) }}"  data-remove="list_{{$value->id}}">Delete</a>
                     </div>
                 </div>
             </td>        
@@ -229,10 +251,10 @@ input:checked + .slider:before {
             <td>{{ $value->purpose }}</td>
             <td>
                 <div class="dropdown">
-                    <button type="button" class="btn btn-primary dropdown-toggle" style="padding: 18px 30px;" data-toggle="dropdown"></button>
+                    <button type="button" class="btn btn-lights dropdown-toggle" style="padding: 20px 30px;" data-toggle="dropdown"></button>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="{{url('Payment_edit/'.$value->id)}}">Edit</a>
-                        <a class="dropdown-item"  data-bs-toggle="modal" data-bs-target="#exampleModal1">Delete</a>
+                        <a class="dropdown-item delete-cart-item" data-url="{{ url('Payment_delete/'.$value->id) }}"  data-remove="list_{{$value->id}}">Delete</a>
                     </div>
                 </div>
             </td>        
@@ -267,10 +289,10 @@ input:checked + .slider:before {
                     <td>{{ $value->network }}</td>
                     <td>
                         <div class="dropdown">
-                            <button type="button" class="btn btn-primary dropdown-toggle" style="padding: 18px 30px;" data-toggle="dropdown"></button>
+                            <button type="button" class="btn btn-lights dropdown-toggle" style="padding: 20px 30px;" data-toggle="dropdown"></button>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="{{url('PhoneNumber_edit/'.$value->id)}}">Edit</a>
-                                <a class="dropdown-item"  data-bs-toggle="modal" data-bs-target="#exampleModal1">Delete</a>
+                                <a class="dropdown-item delete-cart-item" data-url="{{ url('PhoneNumber_delete/'.$value->id) }}"  data-remove="list_{{$value->id}}">Delete</a>
                             </div>
                         </div>
                     </td>        
@@ -314,10 +336,10 @@ input:checked + .slider:before {
                     <td>{{ $value->destination }}</td>
                     <td>
                         <div class="dropdown">
-                            <button type="button" class="btn btn-primary dropdown-toggle" style="padding: 18px 30px;" data-toggle="dropdown"></button>
+                            <button type="button" class="btn btn-lights dropdown-toggle" style="padding: 20px 30px;" data-toggle="dropdown"></button>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="{{url('Travel_edit/'.$value->id)}}">Edit</a>
-                                <a class="dropdown-item"  data-bs-toggle="modal" data-bs-target="#exampleModal1">Delete</a>
+                                <a class="dropdown-item delete-cart-item" data-url="{{ url('Travel_delete/'.$value->id) }}"  data-remove="list_{{$value->id}}">Delete</a>
                             </div>
                         </div>
                     </td>        
@@ -353,10 +375,10 @@ input:checked + .slider:before {
                     <td>{{ $value->rel_po }}</td>
                     <td>
                         <div class="dropdown">
-                            <button type="button" class="btn btn-primary dropdown-toggle" style="padding: 18px 30px;" data-toggle="dropdown"></button>
+                            <button type="button" class="btn btn-lights dropdown-toggle" style="padding: 20px 30px;" data-toggle="dropdown"></button>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="{{url('Family_edit/'.$value->id)}}">Edit</a>
-                                <a class="dropdown-item"  data-bs-toggle="modal" data-bs-target="#exampleModal1">Delete</a>
+                                <a class="dropdown-item delete-cart-item" data-url="{{ url('Family_delete/'.$value->id) }}"  data-remove="list_{{$value->id}}">Delete</a>
                             </div>
                         </div>
                     </td>        
@@ -388,7 +410,7 @@ input:checked + .slider:before {
             </thead>
             <tbody>
                 @foreach($Property as $key => $value)
-                <tr>
+                <tr class="list10_{{$value->id}}">
                     <th scope="row">{{ ++$key }}</th>
                     <td>{{ $value->type }}</td>
                     <td>{{ $value->E_number }}</td>
@@ -396,10 +418,10 @@ input:checked + .slider:before {
                     <td>{{ $value->remarks }}</td>
                     <td>
                         <div class="dropdown">
-                            <button type="button" class="btn btn-primary dropdown-toggle" style="padding: 18px 30px;" data-toggle="dropdown"></button>
+                            <button type="button" class="btn btn-lights dropdown-toggle" style="padding: 20px 30px;" data-toggle="dropdown"></button>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="{{url('Property_edit/'.$value->id)}}">Edit</a>
-                                <a class="dropdown-item"  data-bs-toggle="modal" data-bs-target="#exampleModal1">Delete</a>
+                                <a class="dropdown-item delete-cart-item" data-url="{{ url('Property_delete/'.$value->id) }}"  data-remove="list10_{{$value->id}}">Delete</a>
                             </div>
                         </div>
                     </td>        
@@ -623,7 +645,7 @@ input:checked + .slider:before {
                     @csrf
                     <div class="form-outline mb-4">
                         <label class="form-label" >Date Of Travelling</label>
-                        <input type="text" name="dtravel" class="form-control">
+                        <input type="date" name="dtravel" class="form-control">
                     </div>
 
                     <div class="form-outline mb-4">
@@ -787,6 +809,9 @@ input:checked + .slider:before {
         </div>
     </div>
 </div>
+
+
+
 
 @endsection
 @section('script')

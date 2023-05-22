@@ -21,6 +21,25 @@
   <!-- CSS Files -->
   <link id="pagestyle" href="{{asset('assets/css/dashboard.css?v=2.0.4')}}" rel="stylesheet" />
   <link id="pagestyle" href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.css">
+  <style type="text/css">
+    .swal2-title{
+      font-size: 28px;
+    }
+    .swal2-icon.swal2-warning {
+      border-color: red !important;
+      color: red !important;
+    }
+    .swal2-styled.swal2-confirm {
+      border: 0;
+      border-radius: 0.25em;
+      background: initial;
+      background-color: #007bff !important;
+      color: #fff;
+      font-size: 1em;
+      transition: 1px;
+    }
+  </style>
 </head>
 <body>
 
@@ -28,15 +47,14 @@
     @include('layout.inc.SideBar')
   </aside>
   <main class="main-content position-relative border-radius-lg ps">
-    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" data-scroll="false">
-      @include('layout.inc.DashboardNav')
-    </nav>
+    
     <div class="container-fluid py-4">
       @yield('content')
     </div>
   </main>
 
   <!--   Core JS Files   -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -46,7 +64,10 @@
   <script src="{{ asset('assets/js/plugins/perfect-scrollbar.min.js')}}"></script>
   <script src="{{ asset('assets/js/plugins/smooth-scrollbar.min.js')}}"></script>
   <script src="{{ asset('assets/js/plugins/chartjs.min.js')}}"></script>
-  <script>
+  <script src="{{ asset('js/global-script.js')}}"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+  {{-- <script>
     var ctx1 = document.getElementById("chart-line").getContext("2d");
 
     var gradientStroke1 = ctx1.createLinearGradient(0, 230, 0, 50);
@@ -128,7 +149,7 @@
         },
       },
     });
-  </script>
+  </script> --}}
   <script>
     var win = navigator.platform.indexOf('Win') > -1;
     if (win && document.querySelector('#sidenav-scrollbar')) {
@@ -141,7 +162,8 @@
   <!-- Github buttons -->
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="{{asset('assets/js/dashboard.min.js?v=2.0.4')}}"></script>
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  {{-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> --}}
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   @if (session('status'))
   <script>
     swal("{{session('status')}}");

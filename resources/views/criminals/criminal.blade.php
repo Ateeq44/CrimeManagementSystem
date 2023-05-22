@@ -98,7 +98,7 @@
             
             <td>
                 <div class="dropdown">
-                    <button type="button" class="btn btn-primary dropdown-toggle" style="padding: 18px 30px;" data-toggle="dropdown"></button>
+                    <button type="button" class="btn btn-lights dropdown-toggle" style="padding: 18px 30px;" data-toggle="dropdown"></button>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="{{url('view/'.$value->id)}}">Show</a>
                         <a class="dropdown-item" href="{{ url('criminals_edit/'.$value->id) }}">Edit</a>

@@ -118,7 +118,41 @@
 
  
 
+ {{-- Add Model --}}
 
+{{-- Arrest --}}
+
+<div class="modal fade" id="exampleModal21" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add Arrested Details</h5>
+                <button type="button" class="btn-close text-dark" style="margin-right: 10px;" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="fa-solid fa-xmark fa-2xl"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <form action="{{ url('Arrest') }}" method="POST">
+                    @csrf
+
+                    <div class="form-outline mb-4">
+                        <label class="form-label">Description</label>
+                        <textarea class="form-control" name="description"></textarea>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                        <label class="form-label" >Date Of Arrest</label>
+                        <input type="date" name="date" class="form-control">
+                    </div>
+                    <input type="hidden" name="cri_id" value="{{ $show->id }}">
+                    <button type="submit" class="btn btn-success btn-square btn-lg w-100 btn-block mb-4">Submit</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
 
 
 @endsection

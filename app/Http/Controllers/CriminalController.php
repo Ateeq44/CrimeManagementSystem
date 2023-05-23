@@ -173,37 +173,37 @@ class CriminalController extends Controller
     {
         $arrest = Arrest::find($id);
         $arrest->delete();
-        return redirect()->back()->with('status', 'Deleted Successfully');
+        return json_encode(['flag' => true, 'status', 'Deleted Successfully']);
     }
     public function fir_delete($id)
     {
         $arrest = fir::find($id);
         $arrest->delete(); 
-        return redirect()->back()->with('status', 'Deleted Successfully');
+        return json_encode(['flag' => true, 'status', 'Deleted Successfully']);
     }
     public function Payment_delete($id)
     {
         $arrest = Payment::find($id);
         $arrest->delete();   
-        return redirect()->back()->with('status', 'Deleted Successfully');
+        return json_encode(['flag' => true, 'status', 'Deleted Successfully']);
     }
     public function PhoneNumber_delete($id)
     {
         $arrest = PhoneNumber::find($id);
         $arrest->delete();   
-        return redirect()->back()->with('status', 'Deleted Successfully');
+        return json_encode(['flag' => true, 'status', 'Deleted Successfully']);
     }
     public function Travel_delete($id)
     {
         $arrest = Travel::find($id);
         $arrest->delete();   
-        return redirect()->back()->with('status', 'Deleted Successfully');
+        return json_encode(['flag' => true, 'status', 'Deleted Successfully']);
     }
     public function Family_delete($id)
     {
         $arrest = Family::find($id);
         $arrest->delete();  
-        return redirect()->back()->with('status', 'Deleted Successfully');
+        return json_encode(['flag' => true, 'status', 'Deleted Successfully']);
     }
     public function Property_delete($id)
     {

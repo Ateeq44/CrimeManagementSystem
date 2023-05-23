@@ -18,7 +18,7 @@
   var attr = $(this).attr("data-action");
   let url = $(this).attr("data-url");
   Swal.fire({
-    title: "are you sure to delete this records?",
+    title: "Do you really want to remove",
     text: "You won't be able to revert this!",
     icon: "warning",
     showCancelButton: true,

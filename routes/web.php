@@ -18,9 +18,9 @@ Auth::routes();
 
 Route::group(['middleware' => ['auth']], function() {
 
-	Route::get('/', [App\Http\Controllers\AdminController::class, 'index']);
+	// Route::get('/', [App\Http\Controllers\ComplaintController::class, 'index']);
 	// Complaint
-	Route::get('complaint', [App\Http\Controllers\ComplaintController::class, 'index']);
+	Route::get('/', [App\Http\Controllers\ComplaintController::class, 'index']);
 	Route::post('com-submit', [App\Http\Controllers\ComplaintController::class, 'complaint']);
 	Route::get('com_delete/{id}', [App\Http\Controllers\ComplaintController::class, 'delete']);
 	Route::get('com_edit/{id}', [App\Http\Controllers\ComplaintController::class, 'edit']);

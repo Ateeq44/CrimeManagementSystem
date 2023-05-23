@@ -1,0 +1,24 @@
+.dropdown-new {
+    inset: -3px 177px auto auto !important;
+}
+div#myTable_filter {
+    padding: 27px;
+}
+div#myTable_length {
+    padding: 27px;
+}
+div#myTable_paginate {
+    padding: 27px;
+}
+div#myTable_info {
+    padding: 27px;
+}
+th.sorting {
+    font-size: 12px !important;
+}
+.pl-3{
+    padding-left: 10px;
+}
+.float-right{
+    float: right;
+}

@@ -11,7 +11,7 @@ class ComplaintController extends Controller
     public function index()
     {
         $data = [];
-        $data['complaint'] = Complaint::get();
+        $data['complaint'] = Complaint::where('user_id', Auth::id())->get();
         return view('complaint.complaint', $data);
     }
     public function complaint(Request $request)

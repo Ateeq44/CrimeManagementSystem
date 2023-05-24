@@ -13,6 +13,8 @@ use App\Models\PhoneNumber;
 use App\Models\Travel;
 use App\Models\Family;
 use App\Models\Property;
+use Illuminate\Support\Facades\Auth;
+
 
 class CriminalController extends Controller
 {
@@ -21,7 +23,7 @@ class CriminalController extends Controller
         $data = [];
         $data['po_station'] = PoliceStation::get(); 
         $data['karwai'] = Crime::get(); 
-        $data['criminals'] = criminal::get();
+        $data['criminals'] = criminal::where('user_id', Auth::id())->get();
 
         return view('criminals.criminal', $data);
     }
@@ -29,6 +31,7 @@ class CriminalController extends Controller
     public function store(Request $request)
     {
         $data = [
+            'user_id' => Auth::id(),
             'name' => $request->input('name'),
             'fname' => $request->input('fname'),
             'address' => $request->input('address'),
@@ -215,64 +218,23 @@ class CriminalController extends Controller
     // Criminal Profile Edit
     public function arrest_edit(Request $request, $id)
     {
-        $data = [
-            'description' => $request->input('description'),
-            'date' => $request->input('date'),
-            'cri_id' => $request->input('cri_id'),
-        ];
-        $insert = Arrest::update($data);
-        return redirect()->back()->with('status', 'Added Successfully');
+        
     }
     public function fir_edit(Request $request, $id)
     {
-        $data = [
-            'fir_number' => $request->input('fir_number'),
-            'crime' => $request->input('crime'),
-            'remarks' => $request->input('remark'),
-            'doc' => $request->input('doc'),
-            'po_station' => $request->input('po_station'),
-            'cri_id' => $request->input('cri_id'),
-        ];
-        $insert = Fir::create($data);
-        return redirect()->back()->with('status', 'Added Successfully');
+        
     }
     public function Payment_edit(Request $request, $id)
     {
-        $data = [
-            'send' => $request->input('Send'),
-            'method' => $request->input('method'),
-            'amount' => $request->input('amount'),
-            'n_sender' => $request->input('n_sender'),
-            'account' => $request->input('account'),
-            'purpose' => $request->input('purpose'),
-            'cri_id' => $request->input('cri_id'),
-        ];
-        $insert = Payment::create($data);
-        return redirect()->back()->with('status', 'Added Successfully');
+        
     }
     public function PhoneNumber_edit(Request $request, $id)
     {
-        $data = [
-            'n_number' => $request->input('m_number'),
-            'network' => $request->input('network'),
-            'cri_id' => $request->input('cri_id'),
-        ];
-        $insert = PhoneNumber::create($data);
-        return redirect()->back()->with('status', 'Added Successfully');
+        
     }
     public function Travel_edit(Request $request, $id)
     {
-        $data = [
-            'dtravel' => $request->input('dtravel'),
-            'f_number' => $request->input('f_number'),
-            'status' => $request->input('status'),
-            'passport' => $request->input('passport'),
-            's_name' => $request->input('s_name'),
-            'destination' => $request->input('destination'),
-            'cri_id' => $request->input('cri_id'),
-        ];
-        $insert = Travel::create($data);
-        return redirect()->back()->with('status', 'Added Successfully');
+       
     }
     public function Family_edit(Request $request, $id)
     {

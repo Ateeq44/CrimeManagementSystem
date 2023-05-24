@@ -16,5 +16,6 @@ class Criminal extends Model
         'cnic',
         'po_station',
         'karwai',
+        'user_id',
     ];
 }

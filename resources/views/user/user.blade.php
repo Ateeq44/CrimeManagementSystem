@@ -13,12 +13,14 @@
           <div class="card">
             <div class="card-header">
               <h3 class="card-title float-left">Users</h3>
+              @if(Auth::user()->role_as == 1)
+
               <div class="w-100">
                 <a href="#" class="btn btn-success btn-square" style="float:right;" data-bs-toggle="modal" data-bs-target="#exampleModal">
                  Add New
                </a>
              </div>
-
+             @endif
            </div>
 
            <div class="table-responsive">
@@ -28,8 +30,10 @@
                   <th class="w-1">#</th>
                   <th>Name</th>
                   <th>Email</th>
+                  @if(Auth::user()->role_as == 1)
                   <th>Password</th>
                   <th class="text-center"></th>
+                  @endif
                 </tr>
               </thead>
               <tbody>
@@ -38,6 +42,7 @@
                   <td><span class="text-muted">{{ ++$key }}</span></td>
                   <td>{{ $value->name }}</td>
                   <td>{{ $value->email }}</td>
+                  @if(Auth::user()->role_as == 1)
                   <td>{{ $value->password }}</td>
                   <td class="text-end">
                     <span class="dropdown">
@@ -52,6 +57,7 @@
                       </div>
                     </span>
                   </td>
+                  @endif
                 </tr>
                 @endforeach
               </tbody>
@@ -86,6 +92,15 @@
         </div>
 
         <div class="form-outline mb-4">
+          <label class="form-label" >Police Station</label>
+          <select class="form-control" name="ps_id">
+            @foreach($police_station as $value)
+            <option value="{{ $value->id }}">{{ $value->name }}</option>
+            @endforeach
+          </select>
+        </div>
+
+        <div class="form-outline mb-4">
           <label class="form-label" >Email</label>
           <input type="Gmail" name="email" class="form-control">
         </div>
@@ -94,7 +109,6 @@
           <label class="form-label" >Password</label>
           <input type="Password" name="password" class="form-control">
         </div>
-        
         <button type="submit" class="btn btn-success btn-square w-100 btn-block mb-4">Submit</button>
       </form>
     </div>

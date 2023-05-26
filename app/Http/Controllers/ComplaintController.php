@@ -11,7 +11,7 @@ class ComplaintController extends Controller
     public function index()
     {
         $data = [];
-        $data['complaint'] = Complaint::where('user_id', Auth::user()->ps_id)->get();
+        $data['complaint'] = Complaint::where('ps_id', Auth::user()->ps_id)->get();
         return view('complaint.complaint', $data);
     }
     public function complaint(Request $request)
@@ -20,7 +20,7 @@ class ComplaintController extends Controller
 
         $data = [
 
-            'user_id' => Auth::user()->ps_id,
+            'ps_id' => Auth::user()->ps_id,
             'name' => $request->input('name'),
             'cnic' => $request->input('cnic'),
             'address' => $request->input('address'),
@@ -32,6 +32,7 @@ class ComplaintController extends Controller
             'complaint_no' =>  '#'.rand(11111,99999),
 
         ];
+        // dd($data);
         $insert = complaint::create($data);
         return redirect(url('/'))->with('status', 'Added Successfully');
     }
@@ -51,7 +52,7 @@ class ComplaintController extends Controller
     public function update(Request $request, $id)
     {
         $complaint = complaint::find($id);
-        $complaint->user_id = Auth::id();
+        $complaint->user_id = Auth::user()->ps_id;
         $complaint->name =  $request->input('name');
         $complaint->cnic =  $request->input('cnic');
         $complaint->address =  $request->input('address');

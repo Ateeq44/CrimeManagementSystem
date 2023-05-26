@@ -18,7 +18,7 @@ class Complaint extends Model
         'doc',
         'tocrime',
         'incident',
-        'user_id',
+        'ps_id',
         'complaint_no',
     ];
 }

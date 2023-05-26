@@ -28,4 +28,6 @@ class AdminController extends Controller
         $data['section'] = crime::get();
         return view('section', $data);
     }
+
+    
 }

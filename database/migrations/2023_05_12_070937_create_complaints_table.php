@@ -24,7 +24,7 @@ class CreateComplaintsTable extends Migration
             $table->string('tocrime')->nullable();
             $table->string('incident')->nullable();
             $table->string('complaint_no')->nullable();
-            $table->string('user_id')->nullable();
+            $table->string('ps_id')->nullable();
 
             $table->timestamps();
         });

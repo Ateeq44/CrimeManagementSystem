@@ -14,7 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 Auth::routes();
 
+Route::group(['middleware' => ['isAdmin']], function() {
 
+	Route::get('admin', [App\Http\Controllers\AdminController::class, 'index']);
+});
 
 Route::group(['middleware' => ['auth']], function() {
 
@@ -67,8 +70,8 @@ Route::group(['middleware' => ['auth']], function() {
 	// Users
 	Route::get('Users', [App\Http\Controllers\UserController::class, 'user']);
 	Route::post('Users-sub', [App\Http\Controllers\UserController::class, 'store']);
-	Route::get('user_delete', [App\Http\Controllers\UserController::class, 'delete']);
-	Route::get('user_edit', [App\Http\Controllers\UserController::class, 'edit']);
-	Route::post('update', [App\Http\Controllers\UserController::class, 'update']);
+	Route::get('user_delete/{id}', [App\Http\Controllers\UserController::class, 'delete']);
+	Route::get('user_edit/{id}', [App\Http\Controllers\UserController::class, 'edit']);
+	Route::post('user_update/{id}', [App\Http\Controllers\UserController::class, 'update']);
 
 });

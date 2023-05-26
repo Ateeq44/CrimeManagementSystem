@@ -32,10 +32,10 @@ Complaint
                           <th>CNIC #</th>
                           <th>Address</th>
                           <th>Location of Crime</th>
-                          <th>Police Station</th>
+                          {{-- <th>Police Station</th> --}}
                           <th>Date of Crime</th>
                           <th>Crime</th>
-                          <th>Created At</th>
+                          {{-- <th>Created At</th> --}}
                           <th class="text-center"></th>
                         </tr>
                       </thead>
@@ -48,10 +48,10 @@ Complaint
                           <td>{{ $value->cnic }}</td>
                           <td>{{ $value->address }}</td>
                           <td>{{ $value->loca_crime }}</td>
-                          <td>{{ $value->police_station }}</td>
+                          {{-- <td>{{ $value->police_station }}</td> --}}
                           <td>{{ $value->doc }}</td>
                           <td>{{ $value->tocrime }}</td>
-                          <td>{{ $value->created_at }}</td>
+                          {{-- <td>{{ $value->created_at }}</td> --}}
                           <td class="text-end">
                             <span class="dropdown">
                               <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown" aria-expanded="false">Actions</button>

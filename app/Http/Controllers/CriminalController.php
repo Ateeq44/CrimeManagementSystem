@@ -23,7 +23,7 @@ class CriminalController extends Controller
         $data = [];
         $data['po_station'] = PoliceStation::get(); 
         $data['karwai'] = Crime::get(); 
-        $data['criminals'] = criminal::where('user_id', Auth::id())->get();
+        $data['criminals'] = criminal::where('ps_id', Auth::user()->ps_id)->get();
 
         return view('criminals.criminal', $data);
     }
@@ -31,7 +31,7 @@ class CriminalController extends Controller
     public function store(Request $request)
     {
         $data = [
-            'user_id' => Auth::id(),
+            'ps_id' => Auth::user()->ps_id,
             'name' => $request->input('name'),
             'fname' => $request->input('fname'),
             'address' => $request->input('address'),

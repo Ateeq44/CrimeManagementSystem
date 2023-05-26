@@ -14,12 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 Auth::routes();
 
-Route::group(['middleware' => ['isAdmin']], function() {
+Route::prefix('admin')->middleware(['auth'])->group(function(){
 
 	Route::get('admin', [App\Http\Controllers\AdminController::class, 'index']);
+
 });
 
-Route::group(['middleware' => ['auth']], function() {
+Route::prefix('/')->middleware(['auth'])->group(function() {
 
 	// Route::get('/', [App\Http\Controllers\ComplaintController::class, 'index']);
 	// Complaint

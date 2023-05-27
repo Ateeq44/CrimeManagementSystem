@@ -124,11 +124,11 @@ input:checked + .slider:before {
                 <div class="card">
                   <div class="card-header">
                     <h3 class="card-title">Arrest</h3>
-                    <div class="w-100">
+                    {{-- <div class="w-100">
                         <button class="btn btn-success btn-square float-right"  data-bs-toggle="modal" data-bs-target="#exampleModal21">
                             Add New
                         </button>
-                    </div>
+                    </div> --}}
                 </div>
                 <div class="table-responsive">
                     <table class="table card-table table-vcenter text-nowrap datatable">
@@ -137,7 +137,7 @@ input:checked + .slider:before {
                               <th class="">#</th>
                               <th>Description</th>
                               <th>Date Of Arrest</th>
-                              <th></th>
+                              {{-- <th></th> --}}
                           </tr>
                       </thead>
                       <tbody>
@@ -146,7 +146,7 @@ input:checked + .slider:before {
                             <td>{{ ++$key }}</td>
                             <td>{{ $value->description }}</td>
                             <td>{{ $value->date }}</td>
-                            <td class="">
+                            {{-- <td class="">
                                 <span class="dropdown">
                                     <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown">
                                         Actions
@@ -160,7 +160,7 @@ input:checked + .slider:before {
                                     </a>
                                 </div>
                             </span>
-                        </td>
+                        </td> --}}
                     </tr>
                     @endforeach
                 </tbody>
@@ -174,11 +174,11 @@ input:checked + .slider:before {
     <div class="card">
       <div class="card-header">
         <h3 class="card-title">FIR</h3>
-        <div class="w-100">
+        {{-- <div class="w-100">
             <button class="btn btn-success btn-square float-right"  data-bs-toggle="modal" data-bs-target="#exampleModal22">
                 Add New
             </button>
-        </div>
+        </div> --}}
     </div>
     <div class="table-responsive">
         <table class="table card-table table-vcenter text-nowrap datatable">
@@ -190,7 +190,7 @@ input:checked + .slider:before {
                   <th>Remarks</th>
                   <th>Date of Crime</th>
                   <th>Police Station</th>
-                  <th></th>
+                  {{-- <th></th> --}}
               </tr>
           </thead>
           <tbody>
@@ -202,7 +202,7 @@ input:checked + .slider:before {
                 <td>{{ $value->remarks }}</td>
                 <td>{{ $value->doc }}</td>
                 <td>{{ $value->po_station }}</td>
-                <td class="">
+                {{-- <td class="">
                     <span class="dropdown">
                         <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown">
                             Actions
@@ -216,7 +216,7 @@ input:checked + .slider:before {
                         </a>
                     </div>
                 </span>
-            </td>
+            </td> --}}
         </tr>
         @endforeach
     </tbody>
@@ -229,11 +229,11 @@ input:checked + .slider:before {
     <div class="card">
       <div class="card-header">
         <h3 class="card-title">Payment</h3>
-        <div class="w-100">
+        {{-- <div class="w-100">
             <button class="btn btn-success btn-square float-right"  data-bs-toggle="modal" data-bs-target="#exampleModal23">
                 Add New
             </button>
-        </div>
+        </div> --}}
     </div>
     <div class="table-responsive">
         <table class="table card-table table-vcenter text-nowrap datatable">
@@ -246,7 +246,7 @@ input:checked + .slider:before {
                   <th>Name of Sender/Receiver</th>
                   <th>Account of Sender/Receiver</th>
                   <th>Purpose</th>
-                  <th></th>
+                  {{-- <th></th> --}}
               </tr>
           </thead>
           <tbody>
@@ -259,7 +259,7 @@ input:checked + .slider:before {
                 <td>{{ $value->n_sender }}</td>
                 <td>{{ $value->account }}</td>
                 <td>{{ $value->purpose }}</td>
-                <td class="">
+                {{-- <td class="">
                     <span class="dropdown">
                         <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown">
                             Actions
@@ -273,7 +273,7 @@ input:checked + .slider:before {
                         </a>
                     </div>
                 </span>
-            </td>
+            </td> --}}
         </tr>
         @endforeach
     </tbody>
@@ -286,11 +286,11 @@ input:checked + .slider:before {
     <div class="card">
       <div class="card-header">
         <h3 class="card-title w-50">Phone Number</h3>
-        <div class="w-100">
+        {{-- <div class="w-100">
             <button class="btn btn-success btn-square float-right"  data-bs-toggle="modal" data-bs-target="#exampleModal24">
                 Add New
             </button>
-        </div>
+        </div> --}}
     </div>
     <div class="table-responsive">
         <table class="table card-table table-vcenter text-nowrap datatable">
@@ -299,7 +299,7 @@ input:checked + .slider:before {
                     <th>#</th>
                     <th>Mobile Number</th>
                     <th>Network</th>
-                    <th>Action</th>
+                    {{-- <th>Action</th> --}}
                 </tr>
             </thead>
             <tbody>
@@ -308,7 +308,7 @@ input:checked + .slider:before {
                     <th scope="row">{{ ++$key }}</th>
                     <td>{{ $value->n_number }}</td>
                     <td>{{ $value->network }}</td>
-                    <td class="">
+                    {{-- <td class="">
                         <span class="dropdown">
                             <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown">
                                 Actions
@@ -323,7 +323,7 @@ input:checked + .slider:before {
                             </a>
                         </div>
                     </span>
-                </td>   
+                </td> --}}   
             </tr>
             @endforeach
         </tbody>
@@ -336,11 +336,11 @@ input:checked + .slider:before {
     <div class="card">
       <div class="card-header">
         <h3 class="card-title w-50">Travel History</h3>
-        <div class="w-100">
+        {{-- <div class="w-100">
             <button class="btn btn-success btn-square float-right"  data-bs-toggle="modal" data-bs-target="#exampleModal25">
                 Add New
             </button>
-        </div>
+        </div> --}}
     </div>
     <div class="table-responsive">
         <table class="table card-table table-vcenter text-nowrap datatable">
@@ -353,7 +353,7 @@ input:checked + .slider:before {
                     <th>Passport</th>
                     <th>Site Name</th>
                     <th>Destination</th>
-                    <th></th>
+                    {{-- <th></th> --}}
 
                 </tr>
             </thead>
@@ -367,7 +367,7 @@ input:checked + .slider:before {
                     <td>{{ $value->passport }}</td>
                     <td>{{ $value->s_name }}</td>
                     <td>{{ $value->destination }}</td>
-                    <td class="">
+                    {{-- <td class="">
                         <span class="dropdown">
                             <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown">
                                 Actions
@@ -381,7 +381,7 @@ input:checked + .slider:before {
                             </a>
                         </div>
                     </span>
-                </td>        
+                </td> --}}        
             </tr>
             @endforeach
         </tbody>
@@ -394,11 +394,11 @@ input:checked + .slider:before {
     <div class="card">
       <div class="card-header">
         <h3 class="card-title w-50">Family Details</h3>
-        <div class="w-100">
+        {{-- <div class="w-100">
             <button class="btn btn-success btn-square float-right"  data-bs-toggle="modal" data-bs-target="#exampleModal26">
                 Add New
             </button>
-        </div>
+        </div> --}}
     </div>
     <div class="table-responsive">
         <table class="table card-table table-vcenter text-nowrap datatable">
@@ -407,7 +407,7 @@ input:checked + .slider:before {
                     <th>#</th>
                     <th>Relation</th>
                     <th>Relation PO</th>
-                    <th>Action</th>
+                    {{-- <th>Action</th> --}}
 
                 </tr>
             </thead>
@@ -417,7 +417,7 @@ input:checked + .slider:before {
                     <th scope="row">{{ ++$key }}</th>
                     <td>{{ $value->relation }}</td>
                     <td>{{ $value->rel_po }}</td>
-                    <td class="">
+                    {{-- <td class="">
                         <span class="dropdown">
                             <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown">
                                 Actions
@@ -431,7 +431,7 @@ input:checked + .slider:before {
                             </a>
                         </div>
                     </span>
-                </td>        
+                </td> --}}        
             </tr>
             @endforeach
         </tbody>
@@ -444,11 +444,11 @@ input:checked + .slider:before {
                 <div class="card">
                   <div class="card-header">
                     <h3 class="card-title w-50">Property Details</h3>
-                    <div class="w-100">
+                    {{-- <div class="w-100">
                         <button class="btn btn-success btn-square float-right"  data-bs-toggle="modal" data-bs-target="#exampleModal27">
                             Add New
                         </button>
-                    </div>
+                    </div> --}}
                 </div>
                 <div class="table-responsive">
                     <table class="table card-table table-vcenter text-nowrap datatable">
@@ -459,7 +459,7 @@ input:checked + .slider:before {
                     <th>Engine Number</th>
                     <th>Frame Number</th>
                     <th>Remarks</th>
-                    <th>Action</th>
+                    {{-- <th>Action</th> --}}
 
                 </tr>
             </thead>
@@ -471,7 +471,7 @@ input:checked + .slider:before {
                     <td>{{ $value->E_number }}</td>
                     <td>{{ $value->F_number }}</td>
                     <td>{{ $value->remarks }}</td>
-                    <td class="">
+                    {{-- <td class="">
                     <span class="dropdown">
                         <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown">
                             Actions
@@ -483,7 +483,7 @@ input:checked + .slider:before {
                          <a class="dropdown-item" href="{{url('Property_edit/'.$value->id)}}">
                             Edit
                         </a>
-                    </div>
+                    </div> --}}
                 </span>
             </td>        
                 </tr>

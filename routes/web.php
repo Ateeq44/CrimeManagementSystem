@@ -16,11 +16,13 @@ Auth::routes();
 
 Route::prefix('admin')->middleware(['auth'])->group(function(){
 
-	Route::get('admin', [App\Http\Controllers\AdminController::class, 'index']);
 
 });
 
 Route::prefix('/')->middleware(['auth'])->group(function() {
+	// Route::get('admin-complaint', [App\Http\Controllers\AdminController::class, 'index']);
+
+	// Route::get('admin-Criminal', [App\Http\Controllers\AdminController::class, 'criminal']);
 
 	// Route::get('/', [App\Http\Controllers\ComplaintController::class, 'index']);
 	// Complaint

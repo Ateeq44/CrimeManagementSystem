@@ -23,7 +23,8 @@ class CriminalController extends Controller
         $data = [];
         $data['po_station'] = PoliceStation::get(); 
         $data['karwai'] = Crime::get(); 
-        $data['criminals'] = criminal::where('ps_id', Auth::user()->ps_id)->get();
+        $data['criminals'] = Criminal::where('ps_id', Auth::user()->ps_id)->get();
+        $data['crimina'] = Criminal::get();
 
         return view('criminals.criminal', $data);
     }

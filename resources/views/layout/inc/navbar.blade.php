@@ -35,8 +35,8 @@
           <a href="./settings.html" class="dropdown-item">Settings</a>
           <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="dropdown-item">Logout</a>
           <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-        @csrf
-      </form>
+            @csrf
+          </form>
         </div>
       </div>
     </div>
@@ -47,7 +47,7 @@
     <div class="navbar">
       <div class="container-xl">
         <ul class="navbar-nav">
-          
+
           <li class="nav-item ">
             <a class="nav-link" href="{{url('/')}}">
               <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/package -->
@@ -91,9 +91,12 @@
           </li>
         </ul>
         <div class="my-2 my-md-0 flex-grow-1 flex-md-grow-0 order-first order-md-last">
-          
+
         </div>
       </div>
     </div>
   </div>
 </header>
+
+
+

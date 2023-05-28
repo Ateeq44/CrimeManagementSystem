@@ -24,7 +24,7 @@ class AdminController extends Controller
     {
         $data = [];
         $data['section'] = Crime::get();
-        return view('section', $data);
+        return view('section.section', $data);
     }
 
     public function delete($id)
@@ -36,7 +36,7 @@ class AdminController extends Controller
     {
         $data = [];
         $data["section"] = Crime::find($id);
-        return view('edit', $data);
+        return view('section.edit', $data);
     }
     public function update(Request $request, $id)
     {

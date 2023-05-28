@@ -27,7 +27,9 @@
                       <th class="w-1">#</th>
                       <th>Penal Code</th>
                       <th>Description</th>
+                      @if(Auth::user()->role_as == 1)
                       <th class="text-center"></th>
+                      @endif
                     </tr>
                   </thead>
                   <tbody>

@@ -39,6 +39,9 @@ Route::prefix('/')->middleware(['auth'])->group(function() {
 	Route::post('po-update/{id}', [App\Http\Controllers\PoliceStationController::class, 'update']);
 	// penal code section
 	Route::get('Section', [App\Http\Controllers\AdminController::class, 'Section']);
+	Route::get('section_delete/{id}', [App\Http\Controllers\AdminController::class, 'delete']);
+	Route::get('section_edit/{id}', [App\Http\Controllers\AdminController::class, 'edit']);
+	Route::POST('Section_update/{id}', [App\Http\Controllers\AdminController::class, 'update']);
 	// Criminals
 	Route::get('criminal', [App\Http\Controllers\CriminalController::class, 'criminal']);
 	Route::post('criminal-submit', [App\Http\Controllers\CriminalController::class, 'store']);

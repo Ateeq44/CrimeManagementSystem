@@ -27,6 +27,26 @@ class AdminController extends Controller
         return view('section', $data);
     }
 
+    public function delete($id)
+    {
+        crime::destroy(array('id', $id));
+        return redirect(url('Section'));
+    }
+    public function edit($id)
+    {
+        $data = [];
+        $data["section"] = Crime::find($id);
+        return view('edit', $data);
+    }
+    public function update(Request $request, $id)
+    {
+        $complaint = Crime::find($id);
+        $complaint->section = $request->input('section');
+        $complaint->description =  $request->input('description');
+        $complaint->update();
+        return redirect(url("Section",))->with('status', "Penal Code Updated Successfully");
+    }
+
     public function criminal()
     {
         $data = [];

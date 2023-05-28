@@ -1,18 +1,18 @@
 <style>
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-}
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 34px;
+  }
 
-.switch input { 
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
+  .switch input { 
+      opacity: 0;
+      width: 0;
+      height: 0;
+  }
 
-.ml-3{
+  .ml-3{
     margin-left: 10px;
 }
 .mt-1{
@@ -124,11 +124,14 @@ input:checked + .slider:before {
                 <div class="card">
                   <div class="card-header">
                     <h3 class="card-title">Arrest</h3>
-                    {{-- <div class="w-100">
+                    @if(Auth::user()->role_as == 0)
+
+                    <div class="w-100">
                         <button class="btn btn-success btn-square float-right"  data-bs-toggle="modal" data-bs-target="#exampleModal21">
                             Add New
                         </button>
-                    </div> --}}
+                    </div>
+                    @endif
                 </div>
                 <div class="table-responsive">
                     <table class="table card-table table-vcenter text-nowrap datatable">
@@ -137,7 +140,7 @@ input:checked + .slider:before {
                               <th class="">#</th>
                               <th>Description</th>
                               <th>Date Of Arrest</th>
-                              {{-- <th></th> --}}
+                              <th></th>
                           </tr>
                       </thead>
                       <tbody>
@@ -146,21 +149,24 @@ input:checked + .slider:before {
                             <td>{{ ++$key }}</td>
                             <td>{{ $value->description }}</td>
                             <td>{{ $value->date }}</td>
-                            {{-- <td class="">
+                            @if(Auth::user()->role_as == 0)
+                            <td class="">
+
                                 <span class="dropdown">
                                     <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown">
                                         Actions
                                     </button>
                                     <div class="dropdown-menu dropdown-menu-end dropdown-new">
                                         <a class="dropdown-item delete-cart-item" data-url="{{ url('arrest_delete/'.$value->id) }}"  data-remove="list16_{{$value->id}}">
-                                           Delete
-                                       </a>
-                                       <a class="dropdown-item" href="{{url('fir_edit/'.$value->id)}}">
+                                         Delete
+                                     </a>
+                                     <a class="dropdown-item" href="{{url('fir_edit/'.$value->id)}}">
                                         Edit
                                     </a>
                                 </div>
                             </span>
-                        </td> --}}
+                        </td>
+                        @endif
                     </tr>
                     @endforeach
                 </tbody>
@@ -174,11 +180,14 @@ input:checked + .slider:before {
     <div class="card">
       <div class="card-header">
         <h3 class="card-title">FIR</h3>
-        {{-- <div class="w-100">
+        @if(Auth::user()->role_as == 0)
+
+        <div class="w-100">
             <button class="btn btn-success btn-square float-right"  data-bs-toggle="modal" data-bs-target="#exampleModal22">
                 Add New
             </button>
-        </div> --}}
+        </div>
+        @endif
     </div>
     <div class="table-responsive">
         <table class="table card-table table-vcenter text-nowrap datatable">
@@ -190,7 +199,7 @@ input:checked + .slider:before {
                   <th>Remarks</th>
                   <th>Date of Crime</th>
                   <th>Police Station</th>
-                  {{-- <th></th> --}}
+                  <th></th>
               </tr>
           </thead>
           <tbody>
@@ -202,24 +211,28 @@ input:checked + .slider:before {
                 <td>{{ $value->remarks }}</td>
                 <td>{{ $value->doc }}</td>
                 <td>{{ $value->po_station }}</td>
-                {{-- <td class="">
-                    <span class="dropdown">
-                        <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown">
-                            Actions
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-end dropdown-new">
-                            <a class="dropdown-item delete-cart-item" data-url="{{ url('fir_delete/'.$value->id) }}"  data-remove="list15_{{$value->id}}">
-                               Delete
-                           </a>
-                           <a class="dropdown-item" href="{{url('Payment_edit/'.$value->id)}}">
-                            Edit
-                        </a>
-                    </div>
-                </span>
-            </td> --}}
-        </tr>
-        @endforeach
-    </tbody>
+                @if(Auth::user()->role_as == 0)
+                <td 
+                class="">
+
+                <span class="dropdown">
+                    <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown">
+                        Actions
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end dropdown-new">
+                        <a class="dropdown-item delete-cart-item" data-url="{{ url('fir_delete/'.$value->id) }}"  data-remove="list15_{{$value->id}}">
+                         Delete
+                     </a>
+                     <a class="dropdown-item" href="{{url('Payment_edit/'.$value->id)}}">
+                        Edit
+                    </a>
+                </div>
+            </span>
+        </td>
+        @endif
+    </tr>
+    @endforeach
+</tbody>
 </table>
 </div>
 </div>
@@ -229,11 +242,14 @@ input:checked + .slider:before {
     <div class="card">
       <div class="card-header">
         <h3 class="card-title">Payment</h3>
-        {{-- <div class="w-100">
+        @if(Auth::user()->role_as == 0)
+
+        <div class="w-100">
             <button class="btn btn-success btn-square float-right"  data-bs-toggle="modal" data-bs-target="#exampleModal23">
                 Add New
             </button>
-        </div> --}}
+        </div>
+        @endif
     </div>
     <div class="table-responsive">
         <table class="table card-table table-vcenter text-nowrap datatable">
@@ -246,7 +262,7 @@ input:checked + .slider:before {
                   <th>Name of Sender/Receiver</th>
                   <th>Account of Sender/Receiver</th>
                   <th>Purpose</th>
-                  {{-- <th></th> --}}
+                  <th></th>
               </tr>
           </thead>
           <tbody>
@@ -259,24 +275,28 @@ input:checked + .slider:before {
                 <td>{{ $value->n_sender }}</td>
                 <td>{{ $value->account }}</td>
                 <td>{{ $value->purpose }}</td>
-                {{-- <td class="">
-                    <span class="dropdown">
-                        <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown">
-                            Actions
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-end dropdown-new">
-                            <a class="dropdown-item delete-cart-item" data-url="{{ url('Payment_delete/'.$value->id) }}"  data-remove="list14_{{$value->id}}">
-                               Delete
-                           </a>
-                           <a class="dropdown-item" href="{{url('PhoneNumber_edit/'.$value->id)}}">
-                            Edit
-                        </a>
-                    </div>
-                </span>
-            </td> --}}
-        </tr>
-        @endforeach
-    </tbody>
+                @if(Auth::user()->role_as == 0)
+                <td 
+                class="">
+
+                <span class="dropdown">
+                    <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown">
+                        Actions
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end dropdown-new">
+                        <a class="dropdown-item delete-cart-item" data-url="{{ url('Payment_delete/'.$value->id) }}"  data-remove="list14_{{$value->id}}">
+                         Delete
+                     </a>
+                     <a class="dropdown-item" href="{{url('PhoneNumber_edit/'.$value->id)}}">
+                        Edit
+                    </a>
+                </div>
+            </span>
+            @endif
+        </td>
+    </tr>
+    @endforeach
+</tbody>
 </table>
 </div>
 </div>
@@ -286,11 +306,14 @@ input:checked + .slider:before {
     <div class="card">
       <div class="card-header">
         <h3 class="card-title w-50">Phone Number</h3>
-        {{-- <div class="w-100">
+        @if(Auth::user()->role_as == 0)
+
+        <div class="w-100">
             <button class="btn btn-success btn-square float-right"  data-bs-toggle="modal" data-bs-target="#exampleModal24">
                 Add New
             </button>
-        </div> --}}
+        </div>
+        @endif
     </div>
     <div class="table-responsive">
         <table class="table card-table table-vcenter text-nowrap datatable">
@@ -299,7 +322,7 @@ input:checked + .slider:before {
                     <th>#</th>
                     <th>Mobile Number</th>
                     <th>Network</th>
-                    {{-- <th>Action</th> --}}
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -308,26 +331,30 @@ input:checked + .slider:before {
                     <th scope="row">{{ ++$key }}</th>
                     <td>{{ $value->n_number }}</td>
                     <td>{{ $value->network }}</td>
-                    {{-- <td class="">
-                        <span class="dropdown">
-                            <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown">
-                                Actions
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-end dropdown-new">
-                                <a class="dropdown-item delete-cart-item" data-url="{{ url('PhoneNumber_delete/'.$value->id) }}"  data-remove="list13_{{$value->id}}">
-                                   Delete
-                               </a>
+                    @if(Auth::user()->role_as == 0)
+                    <td 
+                    class="">
 
-                               <a class="dropdown-item" href="{{url('Travel_edit/'.$value->id)}}">
-                                Edit
-                            </a>
-                        </div>
-                    </span>
-                </td> --}}   
-            </tr>
-            @endforeach
-        </tbody>
-    </table>
+                    <span class="dropdown">
+                        <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown">
+                            Actions
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end dropdown-new">
+                            <a class="dropdown-item delete-cart-item" data-url="{{ url('PhoneNumber_delete/'.$value->id) }}"  data-remove="list13_{{$value->id}}">
+                             Delete
+                         </a>
+
+                         <a class="dropdown-item" href="{{url('Travel_edit/'.$value->id)}}">
+                            Edit
+                        </a>
+                    </div>
+                </span>
+            </td>   
+            @endif
+        </tr>
+        @endforeach
+    </tbody>
+</table>
 </div>
 </div>
 </div>
@@ -336,11 +363,14 @@ input:checked + .slider:before {
     <div class="card">
       <div class="card-header">
         <h3 class="card-title w-50">Travel History</h3>
-        {{-- <div class="w-100">
+        @if(Auth::user()->role_as == 0)
+
+        <div class="w-100">
             <button class="btn btn-success btn-square float-right"  data-bs-toggle="modal" data-bs-target="#exampleModal25">
                 Add New
             </button>
-        </div> --}}
+        </div>
+        @endif
     </div>
     <div class="table-responsive">
         <table class="table card-table table-vcenter text-nowrap datatable">
@@ -353,7 +383,7 @@ input:checked + .slider:before {
                     <th>Passport</th>
                     <th>Site Name</th>
                     <th>Destination</th>
-                    {{-- <th></th> --}}
+                    <th></th>
 
                 </tr>
             </thead>
@@ -367,25 +397,29 @@ input:checked + .slider:before {
                     <td>{{ $value->passport }}</td>
                     <td>{{ $value->s_name }}</td>
                     <td>{{ $value->destination }}</td>
-                    {{-- <td class="">
-                        <span class="dropdown">
-                            <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown">
-                                Actions
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-end dropdown-new">
-                                <a class="dropdown-item delete-cart-item" data-url="{{ url('Travel_delete/'.$value->id) }}"  data-remove="list12_{{$value->id}}">
-                                 Delete
-                             </a>
-                             <a class="dropdown-item" href="{{url('Family_edit/'.$value->id)}}">
-                                Edit
-                            </a>
-                        </div>
-                    </span>
-                </td> --}}        
-            </tr>
-            @endforeach
-        </tbody>
-    </table>
+                    @if(Auth::user()->role_as == 0)
+                    <td 
+                    class="">
+
+                    <span class="dropdown">
+                        <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown">
+                            Actions
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end dropdown-new">
+                            <a class="dropdown-item delete-cart-item" data-url="{{ url('Travel_delete/'.$value->id) }}"  data-remove="list12_{{$value->id}}">
+                               Delete
+                           </a>
+                           <a class="dropdown-item" href="{{url('Family_edit/'.$value->id)}}">
+                            Edit
+                        </a>
+                    </div>
+                </span>
+            </td>        
+            @endif
+        </tr>
+        @endforeach
+    </tbody>
+</table>
 </div>
 </div>
 </div>
@@ -394,11 +428,14 @@ input:checked + .slider:before {
     <div class="card">
       <div class="card-header">
         <h3 class="card-title w-50">Family Details</h3>
-        {{-- <div class="w-100">
+        @if(Auth::user()->role_as == 0)
+
+        <div class="w-100">
             <button class="btn btn-success btn-square float-right"  data-bs-toggle="modal" data-bs-target="#exampleModal26">
                 Add New
             </button>
-        </div> --}}
+        </div>
+        @endif
     </div>
     <div class="table-responsive">
         <table class="table card-table table-vcenter text-nowrap datatable">
@@ -407,7 +444,7 @@ input:checked + .slider:before {
                     <th>#</th>
                     <th>Relation</th>
                     <th>Relation PO</th>
-                    {{-- <th>Action</th> --}}
+                    <th>Action</th>
 
                 </tr>
             </thead>
@@ -417,49 +454,56 @@ input:checked + .slider:before {
                     <th scope="row">{{ ++$key }}</th>
                     <td>{{ $value->relation }}</td>
                     <td>{{ $value->rel_po }}</td>
-                    {{-- <td class="">
-                        <span class="dropdown">
-                            <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown">
-                                Actions
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-end dropdown-new">
-                                <a class="dropdown-item delete-cart-item" data-url="{{ url('Family_delete/'.$value->id) }}"  data-remove="list11_{{$value->id}}">
-                                   Delete
-                               </a>
-                               <a class="dropdown-item" href="{{url('Property_edit/'.$value->id)}}">
-                                Edit
-                            </a>
-                        </div>
-                    </span>
-                </td> --}}        
-            </tr>
-            @endforeach
-        </tbody>
-    </table>
+                    @if(Auth::user()->role_as == 0)
+                    <td 
+                    class="">
+
+                    <span class="dropdown">
+                        <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown">
+                            Actions
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end dropdown-new">
+                            <a class="dropdown-item delete-cart-item" data-url="{{ url('Family_delete/'.$value->id) }}"  data-remove="list11_{{$value->id}}">
+                             Delete
+                         </a>
+                         <a class="dropdown-item" href="{{url('Property_edit/'.$value->id)}}">
+                            Edit
+                        </a>
+                    </div>
+                </span>
+            </td>        
+            @endif
+        </tr>
+        @endforeach
+    </tbody>
+</table>
 </div>
 </div>
 </div>
 {{-- Property --}}
 <div class="col-12">
-                <div class="card">
-                  <div class="card-header">
-                    <h3 class="card-title w-50">Property Details</h3>
-                    {{-- <div class="w-100">
-                        <button class="btn btn-success btn-square float-right"  data-bs-toggle="modal" data-bs-target="#exampleModal27">
-                            Add New
-                        </button>
-                    </div> --}}
-                </div>
-                <div class="table-responsive">
-                    <table class="table card-table table-vcenter text-nowrap datatable">
-                        <thead>
-                            <tr>
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title w-50">Property Details</h3>
+        @if(Auth::user()->role_as == 0)
+
+        <div class="w-100">
+            <button class="btn btn-success btn-square float-right"  data-bs-toggle="modal" data-bs-target="#exampleModal27">
+                Add New
+            </button>
+        </div>
+        @endif
+    </div>
+    <div class="table-responsive">
+        <table class="table card-table table-vcenter text-nowrap datatable">
+            <thead>
+                <tr>
                     <th>#</th>
                     <th>Type</th>
                     <th>Engine Number</th>
                     <th>Frame Number</th>
                     <th>Remarks</th>
-                    {{-- <th>Action</th> --}}
+                    <th>Action</th>
 
                 </tr>
             </thead>
@@ -471,28 +515,32 @@ input:checked + .slider:before {
                     <td>{{ $value->E_number }}</td>
                     <td>{{ $value->F_number }}</td>
                     <td>{{ $value->remarks }}</td>
-                    {{-- <td class="">
-                    <span class="dropdown">
-                        <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown">
-                            Actions
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-end dropdown-new">
-                            <a class="dropdown-item delete-cart-item" data-url="{{ url('Property_delete/'.$value->id) }}"  data-remove="list10_{{$value->id}}">
-                             Delete
-                         </a>
-                         <a class="dropdown-item" href="{{url('Property_edit/'.$value->id)}}">
-                            Edit
-                        </a>
-                    </div> --}}
-                </span>
-            </td>        
-                </tr>
-                @endforeach
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
+                    @if(Auth::user()->role_as == 0)
+
+                    <td class="">
+
+                        <span class="dropdown">
+                            <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown">
+                                Actions
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end dropdown-new">
+                                <a class="dropdown-item delete-cart-item" data-url="{{ url('Property_delete/'.$value->id) }}"  data-remove="list10_{{$value->id}}">
+                                   Delete
+                               </a>
+                               <a class="dropdown-item" href="{{url('Property_edit/'.$value->id)}}">
+                                Edit
+                            </a>
+                        </div>
+                    </span>
+                </td>        
+                @endif
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+</div>
+</div>
+</div>
 </div>
 </div>
 
@@ -880,18 +928,18 @@ input:checked + .slider:before {
 @endsection
 @section('script')
 
-    const toggleButton = document.getElementById('toggleButton');
-    const div1 = document.getElementById('div1');
-    const div2 = document.getElementById('div2');
+const toggleButton = document.getElementById('toggleButton');
+const div1 = document.getElementById('div1');
+const div2 = document.getElementById('div2');
 
-    toggleButton.addEventListener('change', function() {
-        if (this.checked) {
-            div1.style.display = 'none';
-            div2.style.display = 'block';
-        } else {
-            div1.style.display = 'block';
-            div2.style.display = 'none';
-        }
-    });
+toggleButton.addEventListener('change', function() {
+    if (this.checked) {
+        div1.style.display = 'none';
+        div2.style.display = 'block';
+    } else {
+        div1.style.display = 'block';
+        div2.style.display = 'none';
+    }
+});
 
 @endsection

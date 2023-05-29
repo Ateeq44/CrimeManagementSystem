@@ -19,7 +19,6 @@ class CreateCriminalsTable extends Migration
             $table->string('fname');
             $table->text('address');
             $table->string('cnic');
-            $table->string('po_station');
             $table->string('karwai');
             $table->string('caseno');
             $table->string('ps_id')->nullable();

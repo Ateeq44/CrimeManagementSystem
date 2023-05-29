@@ -121,23 +121,9 @@ Complaint
                           <td>{{ $value->cnic }}</td>
                           <td>{{ $value->address }}</td>
                           <td>{{ $value->loca_crime }}</td>
-                          <td>{{ @$value->police_station->name}}</td>
+                          <td>{{ $value->police_stations->name}}</td>
                           <td>{{ $value->doc }}</td>
                           <td>{{ $value->tocrime }}</td>
-                          {{-- <td>{{ $value->created_at }}</td> --}}
-                          {{-- <td class="text-end">
-                            <span class="dropdown">
-                              <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown" aria-expanded="false">Actions</button>
-                              <div class="dropdown-menu dropdown-menu-end dropdown-new" style="">
-                                <a class="dropdown-item" href="{{ url('com_delete/'.$value->id) }}">
-                                  Delete
-                                </a>
-                                <a class="dropdown-item" href="{{ url('com_edit/'.$value->id) }}">
-                                  Edit
-                                </a>
-                              </div>
-                            </span>
-                          </td> --}}
                         </tr>
                         @endforeach
                       </tbody>

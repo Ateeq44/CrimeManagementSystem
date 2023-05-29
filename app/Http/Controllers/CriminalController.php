@@ -39,7 +39,6 @@ class CriminalController extends Controller
             'fname' => $request->input('fname'),
             'address' => $request->input('address'),
             'cnic' => $request->input('cnic'),
-            'po_station' => $request->input('po_station'),
             'karwai' => $request->input('Karwai'),
             'caseno' => $request->input('case'),
 
@@ -68,7 +67,6 @@ class CriminalController extends Controller
         $criminal->fname =  $request->input('fname');
         $criminal->address =  $request->input('address');
         $criminal->cnic =  $request->input('cnic');
-        $criminal->po_station =  $request->input('po_station');
         $criminal->karwai =  $request->input('karwai');
         $criminal->caseno =  $request->input('case');
         $criminal->update();

@@ -14,7 +14,6 @@ class Criminal extends Model
         'fname',
         'address',
         'cnic',
-        'po_station',
         'karwai',
         'caseno',
         'ps_id',

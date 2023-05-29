@@ -26,7 +26,6 @@ class ComplaintController extends Controller
             'cnic' => $request->input('cnic'),
             'address' => $request->input('address'),
             'loca_crime' => $request->input('loca_crime'),
-            'police_station' => $request->input('police_station'),
             'doc' => $request->input('doc'),
             'tocrime' => $request->input('tocrime'),
             'incident' => $request->input('incident'),
@@ -58,7 +57,6 @@ class ComplaintController extends Controller
         $complaint->cnic =  $request->input('cnic');
         $complaint->address =  $request->input('address');
         $complaint->loca_crime =  $request->input('loca_crime');
-        $complaint->police_station =  $request->input('police_station');
         $complaint->doc =  $request->input('doc');
         $complaint->tocrime =  $request->input('tocrime');
         $complaint->incident =  $request->input('incident');

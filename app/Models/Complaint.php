@@ -14,7 +14,6 @@ class Complaint extends Model
         'cnic',
         'address',
         'loca_crime',
-        'police_station',
         'doc',
         'tocrime',
         'incident',

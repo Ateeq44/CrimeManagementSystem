@@ -19,7 +19,6 @@ class CreateComplaintsTable extends Migration
             $table->string('cnic')->nullable();
             $table->string('address')->nullable();
             $table->string('loca_crime')->nullable();
-            $table->string('police_station')->nullable();
             $table->string('doc')->nullable();
             $table->string('tocrime')->nullable();
             $table->string('incident')->nullable();

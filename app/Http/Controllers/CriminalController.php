@@ -13,6 +13,7 @@ use App\Models\PhoneNumber;
 use App\Models\Travel;
 use App\Models\Family;
 use App\Models\Property;
+use App\Models\Complaint;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -23,6 +24,7 @@ class CriminalController extends Controller
         $data = [];
         $data['po_station'] = PoliceStation::get(); 
         $data['karwai'] = Crime::get(); 
+        $data['case_number'] = Complaint::where('ps_id', Auth::user()->ps_id)->get(); 
         $data['criminals'] = Criminal::where('ps_id', Auth::user()->ps_id)->get();
         $data['crimina'] = Criminal::get();
 
@@ -39,6 +41,7 @@ class CriminalController extends Controller
             'cnic' => $request->input('cnic'),
             'po_station' => $request->input('po_station'),
             'karwai' => $request->input('Karwai'),
+            'caseno' => $request->input('case'),
 
         ];
         $insert = criminal::create($data);
@@ -67,8 +70,9 @@ class CriminalController extends Controller
         $criminal->cnic =  $request->input('cnic');
         $criminal->po_station =  $request->input('po_station');
         $criminal->karwai =  $request->input('karwai');
+        $criminal->caseno =  $request->input('case');
         $criminal->update();
-        return redirect(url("criminal",))->with('status', "Complaint Updated Successfully");
+        return redirect(url("criminal",))->with('status', "Criminal Details Updated Successfully");
     }
 
     public function view($id)

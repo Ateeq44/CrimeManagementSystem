@@ -81,15 +81,27 @@ input:checked + .slider:before {
                 <div class="card-body p-3 border-radius-0 my-3">
                     <div class="row pl-3">
                         <div class="col-md-2">
-                            <h3 class="font-weight-bold">Name</h3>
+                            <h3 class="font-weight-bold">Complaint #</h3>
                         </div>
                         <div class="col-md-4">
-                            <h3 class="font-weight-normal">{{ $show->name }}</h3>
+                            <h3 class="font-weight-normal">{{ $show->caseno }}</h3>
                         </div>
                         <div class="col-md-2">
-                            <h3 class="font-weight-bold">Father Name</h3>
+                            <h3 class="font-weight-bold">Karwai</h3>
                         </div>
                         <div class="col-md-4">
+                            <h3 class="font-weight-normal">{{ $show->karwai }} Cr.PC</h3>
+                        </div>
+                        <div class="col-md-2 mt-3">
+                            <h3 class="font-weight-bold">Name</h3>
+                        </div>
+                        <div class="col-md-4 mt-3">
+                            <h3 class="font-weight-normal">{{ $show->name }}</h3>
+                        </div>
+                        <div class="col-md-2 mt-3">
+                            <h3 class="font-weight-bold">Father Name</h3>
+                        </div>
+                        <div class="col-md-4 mt-3">
                             <h3 class="font-weight-normal">{{ $show->fname }}</h3>
                         </div>
                         <div class="col-md-2 mt-3">
@@ -108,14 +120,9 @@ input:checked + .slider:before {
                             <h3 class="font-weight-bold">Police Station</h3>
                         </div>
                         <div class="col-md-4 mt-3">
-                            <h3 class="font-weight-normal">{{ $show->po_station }}</h3>
+                            <h3 class="font-weight-normal">{{ $show->police_station->name}}</h3>
                         </div>
-                        <div class="col-md-2 mt-3">
-                            <h3 class="font-weight-bold">Karwai</h3>
-                        </div>
-                        <div class="col-md-4 mt-3">
-                            <h3 class="font-weight-normal">{{ $show->karwai }} Cr.PC</h3>
-                        </div>
+                        
                     </div>
                 </div>
             </div>

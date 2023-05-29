@@ -34,7 +34,7 @@ Complaint
                           <th>CNIC #</th>
                           <th>Address</th>
                           <th>Location of Crime</th>
-                          {{-- <th>Police Station</th> --}}
+                          <th>Police Station</th>
                           <th>Date of Crime</th>
                           <th>Crime</th>
                           {{-- <th>Created At</th> --}}
@@ -50,7 +50,7 @@ Complaint
                           <td>{{ $value->cnic }}</td>
                           <td>{{ $value->address }}</td>
                           <td>{{ $value->loca_crime }}</td>
-                          {{-- <td>{{ $value->police_station }}</td> --}}
+                          <td>{{ @$value->police_stations->name}}</td>
                           <td>{{ $value->doc }}</td>
                           <td>{{ $value->tocrime }}</td>
                           {{-- <td>{{ $value->created_at }}</td> --}}
@@ -121,7 +121,7 @@ Complaint
                           <td>{{ $value->cnic }}</td>
                           <td>{{ $value->address }}</td>
                           <td>{{ $value->loca_crime }}</td>
-                          <td>{{ $value->police_station }}</td>
+                          <td>{{ @$value->police_station->name}}</td>
                           <td>{{ $value->doc }}</td>
                           <td>{{ $value->tocrime }}</td>
                           {{-- <td>{{ $value->created_at }}</td> --}}
@@ -184,11 +184,6 @@ Complaint
                     <div class="form-outline mb-4">
                         <label class="form-label" >Location of Crime</label>
                         <input type="text" name="loca_crime" class="form-control">
-                    </div>
-
-                    <div class="form-outline mb-4">
-                        <label class="form-label" >Police Station</label>
-                        <input type="text" name="police_station" value="{{ Auth::user()->name }}" class="form-control">
                     </div>
 
                     <div class="form-outline mb-4">

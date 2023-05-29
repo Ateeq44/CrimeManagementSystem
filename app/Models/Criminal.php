@@ -16,6 +16,13 @@ class Criminal extends Model
         'cnic',
         'po_station',
         'karwai',
+        'caseno',
         'ps_id',
     ];
+
+
+    public function police_station()
+    {
+        return $this->belongsTo(PoliceStation::class, 'ps_id', 'id');
+    }
 }

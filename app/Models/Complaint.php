@@ -21,4 +21,9 @@ class Complaint extends Model
         'ps_id',
         'complaint_no',
     ];
+
+    public function police_stations()
+    {
+        return $this->belongsTo(PoliceStation::class, 'ps_id', 'id');
+    }
 }

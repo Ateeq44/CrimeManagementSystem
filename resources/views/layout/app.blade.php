@@ -692,5 +692,39 @@
   <script type="text/javascript">
     @yield('script')
   </script>
-</body>
-</html>
+
+  <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
+
+  <script>
+    let dropzone_options = {
+      url: base_url + "/file_upload",
+      addRemoveLinks: true,
+      maxFiles: 1,
+      headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      },
+      success: function(file,res){
+        $('#base_form').append('<input type="hidden" name="profile_image" value="'+res.filename+'">')
+      },
+      init: function () {
+        console.log(db_obj)
+        if(db_obj != null){
+          if(db_obj.profile_image != null && db_obj.profile_image != undefined){
+            var file = base_url + "/storage/app/public/" + db_obj.profile_image;
+            console.log(file);
+                    // Create the mock file:
+            var mockFile = { name: "profile.png" };
+
+                    // Call the default addedfile event handler
+            this.emit("addedfile", mockFile);
+
+                    // And optionally show the thumbnail of the file:
+            this.emit("thumbnail", mockFile, file);
+
+          }
+        }
+        const dropzone = new Dropzone("#my-dropzone", dropzone_options);
+      </script>
+    </body>
+    </html>

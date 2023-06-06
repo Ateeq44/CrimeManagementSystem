@@ -205,7 +205,7 @@ input:checked + .slider:before {
                   <th>Crime </th>
                   <th>Remarks</th>
                   <th>Date of Crime</th>
-                  <th>Police Station</th>
+                  {{-- <th>Police Station</th> --}}
                   <th></th>
               </tr>
           </thead>
@@ -217,7 +217,6 @@ input:checked + .slider:before {
                 <td>{{ $value->crime }}</td>
                 <td>{{ $value->remarks }}</td>
                 <td>{{ $value->doc }}</td>
-                <td>{{ $value->po_station }}</td>
                 @if(Auth::user()->role_as == 0)
                 <td 
                 class="">

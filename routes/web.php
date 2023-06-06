@@ -31,6 +31,7 @@ Route::prefix('/')->middleware(['auth'])->group(function() {
 	Route::get('com_delete/{id}', [App\Http\Controllers\ComplaintController::class, 'delete']);
 	Route::get('com_edit/{id}', [App\Http\Controllers\ComplaintController::class, 'edit']);
 	Route::post('com-update/{id}', [App\Http\Controllers\ComplaintController::class, 'update']);
+	Route::get('com_show/{id}', [App\Http\Controllers\ComplaintController::class, 'show']);
 	// Poloce Station
 	Route::get('Police-Station', [App\Http\Controllers\PoliceStationController::class, 'police_station']);
 	Route::post('po-submit', [App\Http\Controllers\PoliceStationController::class, 'store']);
@@ -79,5 +80,16 @@ Route::prefix('/')->middleware(['auth'])->group(function() {
 	Route::get('user_delete/{id}', [App\Http\Controllers\UserController::class, 'delete']);
 	Route::get('user_edit/{id}', [App\Http\Controllers\UserController::class, 'edit']);
 	Route::post('user_update/{id}', [App\Http\Controllers\UserController::class, 'update']);
+	// FIR
+	Route::get('fir', [App\Http\Controllers\FirController::class, 'fir']);
+	Route::post('fir-submit', [App\Http\Controllers\FirController::class, 'store']);
+	Route::get('fir_delete/{id}', [App\Http\Controllers\FirController::class, 'delete']);
+	Route::get('fir_edit/{id}', [App\Http\Controllers\FirController::class, 'edit']);
+	Route::post('fir_update/{id}', [App\Http\Controllers\FirController::class, 'update']);
+	Route::get('fir_show/{id}', [App\Http\Controllers\FirController::class, 'show']);
+
+	// Profile Setting
+	Route::get('profile/{id}', [App\Http\Controllers\AdminController::class, 'profile_edit']);
+	Route::post('profile-update/{id}', [App\Http\Controllers\AdminController::class, 'profile_update']);
 
 });

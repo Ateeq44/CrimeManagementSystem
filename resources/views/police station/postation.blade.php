@@ -13,7 +13,7 @@
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title float-left">Complaints</h3>
+              <h3 class="card-title float-left">Police Stations</h3>
               @if(Auth::user()->role_as == 1)
               <div class="w-100">
                 <a href="#" class="btn btn-success btn-square" style="float:right;" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -32,7 +32,7 @@
                   <th class="w-1">#</th>
                   <th>Name</th>
                   <th>Contact Number</th>
-                  <th>Created At</th>
+                  {{-- <th>Created At</th> --}}
                   @if(Auth::user()->role_as == 1)
                   <th class="text-center"></th>
                   @endif
@@ -44,7 +44,7 @@
                   <td><span class="text-muted">{{ ++$key }}</span></td>
                   <td>{{ $value->name }}</td>
                   <td>{{ $value->contact_no }}</td>
-                  <td>{{ $value->created_at }}</td>
+                  {{-- <td>{{ $value->created_at }}</td> --}}
                   @if(Auth::user()->role_as == 1)
                   <td class="text-end">
                     <span class="dropdown">

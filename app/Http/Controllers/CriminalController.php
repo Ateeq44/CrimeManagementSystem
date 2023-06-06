@@ -107,7 +107,7 @@ class CriminalController extends Controller
             'crime' => $request->input('crime'),
             'remarks' => $request->input('remark'),
             'doc' => $request->input('doc'),
-            'po_station' => $request->input('po_station'),
+            // 'po_station' => $request->input('po_station'),
             'cri_id' => $request->input('cri_id'),
         ];
         $insert = Fir::create($data);

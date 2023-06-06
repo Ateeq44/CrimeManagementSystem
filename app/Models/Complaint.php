@@ -11,6 +11,8 @@ class Complaint extends Model
     protected $table = "complaints";
     protected $fillable = [
         'name',
+        'fname',
+        'phone',
         'cnic',
         'address',
         'loca_crime',
@@ -21,7 +23,7 @@ class Complaint extends Model
         'complaint_no',
     ];
 
-    public function police_stations()
+    public function policestations()
     {
         return $this->belongsTo(PoliceStation::class, 'ps_id', 'id');
     }

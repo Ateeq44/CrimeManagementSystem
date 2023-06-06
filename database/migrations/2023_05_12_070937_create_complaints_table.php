@@ -16,10 +16,12 @@ class CreateComplaintsTable extends Migration
         Schema::create('complaints', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable();
+            $table->string('fname')->nullable();
             $table->string('cnic')->nullable();
             $table->string('address')->nullable();
             $table->string('loca_crime')->nullable();
             $table->string('doc')->nullable();
+            $table->string('phone')->nullable();
             $table->string('tocrime')->nullable();
             $table->string('incident')->nullable();
             $table->string('complaint_no')->nullable();

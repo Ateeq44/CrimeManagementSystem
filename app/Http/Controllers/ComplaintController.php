@@ -23,10 +23,12 @@ class ComplaintController extends Controller
 
             'ps_id' => Auth::user()->ps_id,
             'name' => $request->input('name'),
+            'fname' => $request->input('fname'),
             'cnic' => $request->input('cnic'),
             'address' => $request->input('address'),
             'loca_crime' => $request->input('loca_crime'),
             'doc' => $request->input('doc'),
+            'phone' => $request->input('phone'),
             'tocrime' => $request->input('tocrime'),
             'incident' => $request->input('incident'),
             'complaint_no' =>  '#'.rand(11111,99999),
@@ -40,7 +42,7 @@ class ComplaintController extends Controller
     public function delete ($id)
     {
         Complaint::destroy(array('id', $id));
-        return redirect ('complaint')->with('status', 'Deleted Successfully');
+        return redirect (url('/'))->with('status', 'Deleted Successfully');
     }
 
     public function edit ($id)
@@ -54,15 +56,23 @@ class ComplaintController extends Controller
         $complaint = complaint::find($id);
         $complaint->user_id = Auth::user()->ps_id;
         $complaint->name =  $request->input('name');
+        $complaint->fname =  $request->input('fname');
         $complaint->cnic =  $request->input('cnic');
         $complaint->address =  $request->input('address');
         $complaint->loca_crime =  $request->input('loca_crime');
         $complaint->doc =  $request->input('doc');
+        $complaint->phone =  $request->input('phone');
         $complaint->tocrime =  $request->input('tocrime');
         $complaint->incident =  $request->input('incident');
         $complaint->complaint_no =  '#'.rand(11111,99999);
         $complaint->update();
-        return redirect(url("complaint",))->with('status', "Complaint Updated Successfully");
+        return redirect(url("/",))->with('status', "Complaint Updated Successfully");
+    }
+    public function show($id)
+    {
+        $data = [];
+        $data['show'] = complaint::where('id', $id)->first();
+        return view('complaint.view', $data);
     }
 
 }

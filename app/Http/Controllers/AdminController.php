@@ -53,6 +53,20 @@ class AdminController extends Controller
         $data['criminals'] = Criminal::get();
         return view('admin.criminal.criminal', $data);
     }
+    public function profile_edit($id)
+    {
+        $data = [];
+        $data['show'] = User::find($id);
+        return view('profile', $data);
+    }
 
+    public function profile_update(Request $request, $id)
+    {
+        $user = USer::find($id);
+        $user->name = $request->input('name');
+        $user->password = \Hash::make($request->input('password'));
+        $user->update();
+        return redirect(url("/",));
+    }
     
 }

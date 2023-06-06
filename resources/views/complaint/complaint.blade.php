@@ -28,16 +28,15 @@
             <table class="table card-table table-vcenter text-nowrap datatable" id="myTable">
               <thead>
                 <tr>
-
-                  <th class="w-1">#</th>
                   <th>Case #</th>
                   <th>Name</th>
+                  <th>Father Name</th>
                   <th>CNIC #</th>
-                  <th>Address</th>
-                  <th>Location of Crime</th>
-                  <th>Police Station</th>
-                  <th>Date of Crime</th>
-                  <th>Crime</th>
+                  {{-- <th>Address</th> --}}
+                  {{-- <th>Location of Crime</th> --}}
+                  {{-- <th>Police Station</th> --}}
+                  {{-- <th>Date of Crime</th> --}}
+                  {{-- <th>Crime</th> --}}
                   {{-- <th>Created At</th> --}}
                   <th class="text-center"></th>
                 </tr>
@@ -45,20 +44,23 @@
               <tbody>
                 @foreach($complaint as $key => $value)
                 <tr>
-                  <td><span class="text-muted">{{ ++$key }}</span></td>
                   <td>{{ $value->complaint_no }}</td>
                   <td>{{ $value->name }}</td>
+                  <td>{{ $value->fname }}</td>
                   <td>{{ $value->cnic }}</td>
-                  <td>{{ $value->address }}</td>
-                  <td>{{ $value->loca_crime }}</td>
-                  <td>{{ @$value->police_stations->name}}</td>
-                  <td>{{ $value->doc }}</td>
-                  <td>{{ $value->tocrime }}</td>
+                  {{-- <td>{{ $value->address }}</td> --}}
+                  {{-- <td>{{ $value->loca_crime }}</td> --}}
+                  {{-- <td>{{ @$value->policestations->name}}</td> --}}
+                  {{-- <td>{{ $value->doc }}</td> --}}
+                  {{-- <td>{{ $value->tocrime }}</td> --}}
                   {{-- <td>{{ $value->created_at }}</td> --}}
                   <td class="text-end">
                     <span class="dropdown">
                       <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown" aria-expanded="false">Actions</button>
                       <div class="dropdown-menu dropdown-menu-end dropdown-new" style="">
+                        <a class="dropdown-item" href="{{ url('com_show/'.$value->id) }}">
+                          Show
+                        </a>
                         <a class="dropdown-item" href="{{ url('com_delete/'.$value->id) }}">
                           Delete
                         </a>
@@ -104,13 +106,13 @@
                           <th>Case #</th>
                           <th>Name</th>
                           <th>CNIC #</th>
-                          <th>Address</th>
-                          <th>Location of Crime</th>
-                          <th>Police Station</th>
-                          <th>Date of Crime</th>
-                          <th>Crime</th>
+                          {{-- <th>Address</th> --}}
+                          {{-- <th>Location of Crime</th> --}}
+                          {{-- <th>Police Station</th> --}}
+                          {{-- <th>Date of Crime</th> --}}
+                          {{-- <th>Crime</th> --}}
                           {{-- <th>Created At</th> --}}
-                          {{-- <th class="text-center"></th> --}}
+                          <th class="text-center"></th>
                         </tr>
                       </thead>
                       <tbody>
@@ -120,11 +122,16 @@
                           <td>{{ $value->complaint_no }}</td>
                           <td>{{ $value->name }}</td>
                           <td>{{ $value->cnic }}</td>
-                          <td>{{ $value->address }}</td>
-                          <td>{{ $value->loca_crime }}</td>
-                          <td>{{ $value->police_stations->name}}</td>
-                          <td>{{ $value->doc }}</td>
-                          <td>{{ $value->tocrime }}</td>
+                          <td class="text-end">
+                            <span class="dropdown">
+                              <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown" aria-expanded="false">Actions</button>
+                              <div class="dropdown-menu dropdown-menu-end dropdown-new" style="">
+                                <a class="dropdown-item" href="{{ url('com_show/'.$value->id) }}">
+                                  Show
+                                </a>
+                              </div>
+                            </span>
+                          </td>
                         </tr>
                         @endforeach
                       </tbody>
@@ -165,6 +172,11 @@
               </div>
 
               <div class="form-outline mb-4">
+                <label class="form-label" >Father Name</label>
+                <input type="text" name="fname" class="form-control">
+              </div>
+
+              <div class="form-outline mb-4">
                 <label class="form-label" >Cnic #</label>
                 <input type="text" name="cnic"  oninput="formatCNIC(this)" maxlength="15" class="form-control">
               </div>
@@ -182,6 +194,11 @@
               <div class="form-outline mb-4">
                 <label class="form-label" >Date Of Crime</label>
                 <input type="date" name="doc" class="form-control">
+              </div>
+
+              <div class="form-outline mb-4">
+                <label class="form-label" >Phone #</label>
+                <input type="phone" name="phone" class="form-control">
               </div>
 
               <!-- Number input -->

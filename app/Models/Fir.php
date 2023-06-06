@@ -14,7 +14,20 @@ class Fir extends Model
         'crime',
         'remarks',
         'doc',
-        'po_station',
+        'ps_id',
         'cri_id',
+        'name',
+        'fname',
+        'cnic',
+        'address',
+        'loca_crime',
+        'doc',
+        'incident',
+        'phone',
+
     ];
+    public function polstations()
+    {
+        return $this->belongsTo(PoliceStation::class, 'ps_id', 'id');
+    }
 }

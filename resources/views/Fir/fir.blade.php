@@ -37,7 +37,7 @@
                   <th>Cnic #</th>
                   <th>Contact #</th>
                   <th>Date Of Crime</th>
-                  <th>Fir Register Date</th>
+                  {{-- <th>Fir Register Date</th> --}}
                   <th class="text-center"></th>
                 </tr>
               </thead>
@@ -49,8 +49,8 @@
                   <td>{{ $value->fname }}</td>
                   <td>{{ $value->cnic }}</td>
                   <td>{{ $value->phone }}</td>
-                  <td>{{ $value->doc }}</td>
-                  <td>{{ date('d-m-Y', strtotime($value->created_at)) }}</td>
+                  <td>{{ date('d-m-Y', strtotime($value->doc)) }}</td>
+                  {{-- <td>{{ date('d-m-Y', strtotime($value->created_at)) }}</td> --}}
                   <td class="text-end">
                     <span class="dropdown">
                       <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown" aria-expanded="false">Actions</button>

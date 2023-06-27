@@ -68,7 +68,7 @@ input:checked + .slider:before {
 </style>
 @extends('layout.app')               
 <title>
-    Criminal
+    View
 </title>
 @section('content')
 <div class="container">

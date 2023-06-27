@@ -76,20 +76,26 @@ input:checked + .slider:before {
         <div class="col-xl-12 col-sm-12 mb-xl-0 mb-4">
             <div class="card">
                 <div class="card-header">
-                    <h2>Fir Full Details</h2>
-                </div> 
-               
+                    <div class="w-50">
+                        <h2>FIR Full Details</h2>
+                    </div>
+                    <div class="w-50">
+                        <a style="float:right;" class="btn btn-success btn-square" href="{{ url('fir') }}">Back</a>
+                        
+                    </div>
+                </div>
+
 
                 <div class="card-body p-3 border-radius-0 my-3">
                     <div class="row pl-3">
-                       
+
                         <div class="col-md-2">
                             <h3 class="font-weight-bold">Complaint #</h3>
                         </div>
                         <div class="col-md-4">
                             <h3 class="font-weight-normal">{{ $show->fir_number }}</h3>
                         </div>
-                       <div class="col-md-2">
+                        <div class="col-md-2">
                             <h3 class="font-weight-bold">Police Station</h3>
                         </div>
                         <div class="col-md-4 ">
@@ -143,19 +149,19 @@ input:checked + .slider:before {
                         <div class="col-md-4 mt-3">
                             <h3 class="font-weight-normal">{{ date('d-m-Y', strtotime($show->created_at)) }}</h3>
                         </div>
-                        
-                        
+
+
                         <div class="col-md-2 mt-3">
                             <h3 class="font-weight-bold">Details</h3>
                         </div>
                         <div class="col-md-10 mt-3">
                             <h3 class="font-weight-normal">{{ $show->incident }}</h3>
                         </div>
-                        
+
                     </div>
                 </div>
-                
-                
+
+
 
             </div>
         </div>

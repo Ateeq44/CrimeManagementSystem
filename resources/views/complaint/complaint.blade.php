@@ -28,14 +28,14 @@
             <table class="table card-table table-vcenter text-nowrap datatable" id="myTable">
               <thead>
                 <tr>
-                  <th>Case #</th>
+                  <th> #</th>
                   <th>Name</th>
                   <th>Father Name</th>
                   <th>CNIC #</th>
                   {{-- <th>Address</th> --}}
                   {{-- <th>Location of Crime</th> --}}
                   {{-- <th>Police Station</th> --}}
-                  {{-- <th>Date of Crime</th> --}}
+                  <th>Date of Crime</th>
                   {{-- <th>Crime</th> --}}
                   {{-- <th>Created At</th> --}}
                   <th class="text-center"></th>
@@ -51,7 +51,7 @@
                   {{-- <td>{{ $value->address }}</td> --}}
                   {{-- <td>{{ $value->loca_crime }}</td> --}}
                   {{-- <td>{{ @$value->policestations->name}}</td> --}}
-                  {{-- <td>{{ $value->doc }}</td> --}}
+                  <td>{{ date('d-m-Y', strtotime($value->doc)) }}</td>
                   {{-- <td>{{ $value->tocrime }}</td> --}}
                   {{-- <td>{{ $value->created_at }}</td> --}}
                   <td class="text-end">
@@ -103,7 +103,7 @@
                         <tr>
 
                           <th class="w-1">#</th>
-                          <th>Case #</th>
+                          <th> #</th>
                           <th>Name</th>
                           <th>CNIC #</th>
                           {{-- <th>Address</th> --}}

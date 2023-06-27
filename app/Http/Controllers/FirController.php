@@ -34,11 +34,36 @@ class FirController extends Controller
         $insert = Fir::create($data);
         return redirect()->back()->with('status', 'Added Successfully');
     }
+    public function edit($id)
+    {
+        $data = [];
+        $data['show'] = Fir::where('id', $id)->first();
+        return view('fir.edit', $data)->with('status', 'Added Successfully');
+    }
+    public function update(Request $request, $id)
+    {
+        $edit = Fir::find($id);
+        $edit->name =  $request->input('name');
+        $edit->fname =  $request->input('fname');
+        $edit->cnic =  $request->input('cnic');
+        $edit->address =  $request->input('address');
+        $edit->loca_crime =  $request->input('loca_crime');
+        $edit->doc =  $request->input('doc');
+        $edit->incident =  $request->input('incident');
+        $edit->phone =  $request->input('phone');
+        $edit->update();
+        return redirect()->back()->with('status', 'Added Successfully');
+    }
 
     public function show($id)
     {
         $data = [];
         $data['show'] = Fir::where('id', $id)->first();
         return view('fir.view', $data);
+    }
+    public function delete($id)
+    {
+        fir::destroy(array('id', $id));
+        return redirect()->back();
     }
 }

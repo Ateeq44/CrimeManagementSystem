@@ -23,6 +23,9 @@
   <link href="{{asset('dist/css/style.css')}}" rel="stylesheet"/>
 
   <style type="text/css">
+    .form-outline{
+          padding: 0px 28px;
+    }
     .swal2-title{
       font-size: 20px !important;
     }

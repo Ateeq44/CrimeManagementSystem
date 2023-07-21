@@ -25,6 +25,10 @@
                     <label class="form-label" >Full Name</label>
                     <input type="text" name="name" value="{{ $complaint->name }}" class="form-control">
                 </div>
+                <div class="form-outline mb-4">
+                    <label class="form-label" >Father Name</label>
+                    <input type="text" name="fname" value="{{ $complaint->fname }}" class="form-control">
+                </div>
 
                 <div class="form-outline mb-4">
                     <label class="form-label" >Cnic #</label>
@@ -49,6 +53,10 @@
                 <div class="form-outline mb-4">
                     <label class="form-label" >Date Of Crime</label>
                     <input type="date" name="doc" value="{{ $complaint->doc }}"  class="form-control">
+                </div>
+                <div class="form-outline mb-4">
+                    <label class="form-label" >Phone #</label>
+                    <input type="text" name="phone" value="{{ $complaint->phone }}"  class="form-control">
                 </div>
 
                 <!-- Number input -->

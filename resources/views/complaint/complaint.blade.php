@@ -158,13 +158,15 @@
             <div class="modal-body">
 
 
-             <form action="{{ url('com-submit') }}" method="POST" enctype="multipart/form-data" class="dropzone">
+             <form action="{{ url('com-submit') }}" method="POST" enctype="multipart/form-data" >
               @csrf
 
-              <div class="form-outline mb-4">
-                <div id="my-dropzone" class="dropzone text-center">
+              {{-- <div class="form-outline mb-4">
+               <div>
+                </div> 
                 </div>
-              </div>
+                </div> --}}
+          
 
               <div class="form-outline mb-4">
                 <label class="form-label" >Full Name</label>
@@ -219,7 +221,10 @@
                 <label class="form-label">Detail of incident</label>
                 <textarea class="form-control" name="incident"></textarea>
               </div>
+              <div class="form-outline mb-4">
+
               <button type="submit" class="btn btn-success btn-square w-100 btn-block mb-4">Submit</button>
+            </div>
             </form>
           </div>
         </div>

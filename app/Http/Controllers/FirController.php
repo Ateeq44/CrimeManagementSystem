@@ -52,7 +52,7 @@ class FirController extends Controller
         $edit->incident =  $request->input('incident');
         $edit->phone =  $request->input('phone');
         $edit->update();
-        return redirect()->back()->with('status', 'Added Successfully');
+        return redirect(url('fir'))->with('status', 'Added Successfully');
     }
 
     public function show($id)

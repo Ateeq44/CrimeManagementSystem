@@ -1345,7 +1345,7 @@ image, text, .jvm-zoomin, .jvm-zoomout {
   top: 2.5rem;
 }
 
-.dropzone {
+/*.dropzone {
   border: var(--tblr-border-width) dashed var(--tblr-border-color);
   color: var(--tblr-muted);
   padding: 1rem;
@@ -1366,7 +1366,7 @@ image, text, .jvm-zoomin, .jvm-zoomout {
 }
 .dropzone .dz-preview .dz-success-mark {
   height: 54px;
-}
+}*/
 
 .fslightbox-container {
   font-family: inherit !important;

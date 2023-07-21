@@ -31,6 +31,7 @@ class ComplaintController extends Controller
             'phone' => $request->input('phone'),
             'tocrime' => $request->input('tocrime'),
             'incident' => $request->input('incident'),
+            'profile_image' => $request->input('profile_image'),
             'complaint_no' =>  '#'.rand(11111,99999),
 
         ];
@@ -54,7 +55,7 @@ class ComplaintController extends Controller
     public function update(Request $request, $id)
     {
         $complaint = complaint::find($id);
-        $complaint->user_id = Auth::user()->ps_id;
+        $complaint->ps_id = Auth::user()->ps_id;
         $complaint->name =  $request->input('name');
         $complaint->fname =  $request->input('fname');
         $complaint->cnic =  $request->input('cnic');

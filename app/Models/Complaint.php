@@ -21,6 +21,7 @@ class Complaint extends Model
         'incident',
         'ps_id',
         'complaint_no',
+        'profile_image',
     ];
 
     public function policestations()

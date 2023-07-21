@@ -31,7 +31,7 @@
                   <th>Name</th>
                   <th>Email</th>
                   @if(Auth::user()->role_as == 1)
-                  <th>Password</th>
+                  {{-- <th>Password</th> --}}
                   <th class="text-center"></th>
                   @endif
                 </tr>
@@ -43,7 +43,7 @@
                   <td>{{ $value->name }}</td>
                   <td>{{ $value->email }}</td>
                   @if(Auth::user()->role_as == 1)
-                  <td>{{ $value->password }}</td>
+                  {{-- <td>{{ $value->password }}</td> --}}
                   <td class="text-end">
                     <span class="dropdown">
                       <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown" aria-expanded="false">Actions</button>
